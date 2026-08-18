@@ -1,0 +1,14 @@
+/node_modules
+/.pnp
+.pnp.js
+/.next/
+/out/
+*.log
+/build
+.DS_Store
+*.pem
+.env
+.env.local
+.env.*.local
+.vercel
+*.tsbuildinfo

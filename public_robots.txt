@@ -1,0 +1,29 @@
+# K9 Shop Location Pages - SEO robots.txt
+
+User-agent: *
+Allow: /
+Allow: /locations/
+Allow: /blog/
+Allow: /blog/
+
+# Disallow private areas (none currently)
+# Disallow: /admin
+
+# Crawl delay (ms)
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://k9locations.vercel.app/sitemap.xml
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
