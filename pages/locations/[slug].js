@@ -1,17 +1,50 @@
-import { locations } from '../../data/locations';
-import LocationPage from '../../components/LocationPage';
+import { getLocationBySlug, locations } from '@/data/locations';
+import Navigation from '@/components/Location/Navigation';
+import Hero from '@/components/Location/Hero';
+import StickyTabs from '@/components/Location/StickyTabs';
+import { useState } from 'react';
 
-export default function LocationPageRoute({ location }) {
-  return <LocationPage location={location} />;
+export default function LocationPage({ location }) {
+  const [activeTab, setActiveTab] = useState('about');
+
+  if (!location) {
+    return <div>Location not found</div>;
+  }
+
+  return (
+    <div>
+      <Navigation location={location} />
+      <Hero location={location} />
+      <StickyTabs activeTab={activeTab} onTabChange={setActiveTab} />
+      
+      <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto' }}>
+        <h2>Section content for: {activeTab}</h2>
+        <p>More sections coming soon...</p>
+      </div>
+    </div>
+  );
 }
 
-export function getStaticProps({ params }) {
-  const location = locations.find(loc => loc.slug === params.slug);
-  if (!location) return { notFound: true };
-  return { props: { location }, revalidate: 3600 };
+export async function getStaticProps({ params }) {
+  const location = getLocationBySlug(params.slug);
+  
+  if (!location) {
+    return { notFound: true };
+  }
+
+  return {
+    props: { location },
+    revalidate: 60,
+  };
 }
 
-export function getStaticPaths() {
-  const paths = locations.map(location => ({ params: { slug: location.slug } }));
-  return { paths, fallback: false };
+export async function getStaticPaths() {
+  const paths = locations.map((location) => ({
+    params: { slug: location.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
 }
