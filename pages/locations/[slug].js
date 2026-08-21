@@ -4,6 +4,7 @@ import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
 import InfoBar from '@/components/Location/InfoBar';
 import About from '@/components/Location/About';
+import Events from '@/components/Location/Events';
 import { useState } from 'react';
 
 export default function LocationPage({ location }) {
@@ -21,8 +22,9 @@ export default function LocationPage({ location }) {
       <InfoBar location={location} />
       
       {activeTab === 'about' && <About location={location} />}
+      {activeTab === 'events' && <Events location={location} />}
       
-      {activeTab !== 'about' && (
+      {activeTab !== 'about' && activeTab !== 'events' && (
         <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto' }}>
           <h2>Section content for: {activeTab}</h2>
           <p>More sections coming soon...</p>
