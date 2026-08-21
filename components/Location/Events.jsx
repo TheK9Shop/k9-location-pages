@@ -23,15 +23,7 @@ export default function Events({ location }) {
         {events && events.length > 0 ? (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {events.map((event) => (
-              <div
-                key={event.id}
-                style={{
-                  background: '#FFF',
-                  borderRadius: '4px',
-                  overflow: 'hidden',
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-                }}
-              >
+              <div key={event.id} style={{ background: '#FFF', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)' }}>
                 {/* Date Header */}
                 <div style={{ background: '#1A1A1A', color: '#FFF', padding: '24px', display: 'flex', alignItems: 'flex-end', gap: '16px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
@@ -61,25 +53,9 @@ export default function Events({ location }) {
                     {event.description}
                   </p>
 
-                  {event.link && event.link !== '#' && (
-                    
-                      href={event.link}
-                      style={{
-                        fontSize: '12px',
-                        fontWeight: '900',
-                        color: '#C0392B',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      Learn More →
-                    </a>
-                  )}
+                  <a href="#" style={{ fontSize: '12px', fontWeight: '900', color: '#C0392B', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
+                    Learn More →
+                  </a>
                 </div>
               </div>
             ))}
