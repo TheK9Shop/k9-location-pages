@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+onMouseEnter={() => setShopDropdownOpen(true)}
+  onMouseLeave={() => setShopDropdownOpen(false)}nano components/Location/Navigation.jsx
 export default function Navigation({ location }) {
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
   const hasDoorDash = !['greenville', 'naples'].includes(location?.slug);
