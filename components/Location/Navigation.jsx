@@ -26,7 +26,7 @@ export default function Navigation({ location }) {
       </a>
       <div style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
         <a href="https://robertt181.sg-host.com/why-raw-2/" style={{ color: '#FFF', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => e.target.style.color = '#C0392B'} onMouseLeave={(e) => e.target.style.color = '#FFF'}>Why Raw?</a>
-        <div style={{ position: 'relative', paddingBottom: '8px' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div style={{ position: 'relative' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <button style={{ color: shopDropdownOpen ? '#C0392B' : '#FFF', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.12em', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>Shop</button>
           {shopDropdownOpen && (
             <div style={{ position: 'absolute', top: '100%', left: 0, background: '#1A1A1A', border: '1px solid #333', borderRadius: '4px', minWidth: '220px', marginTop: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)', zIndex: 1000 }}>
