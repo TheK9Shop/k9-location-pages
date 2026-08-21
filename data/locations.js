@@ -20,6 +20,22 @@ export const locations = [
       { text: 'Local & Trusted', icon: 'ti-home' },
       { text: 'Independently Owned', icon: 'ti-star' },
     ],
+    story: 'We opened The K9 Shop Bohemia because we believe every dog deserves to eat like nature intended. After watching our own dogs thrive on raw, species-appropriate nutrition, we wanted to share this transformation with our community. We are not just selling food — we are here to educate, guide, and support pet parents on the raw feeding journey.',
+    traditions: 'We have a Wall of Raw where we photograph every dog who visits. Customers get a welcome treat on their first visit, and we host monthly raw feeding Q&A nights. We believe in building a community, not just making sales.',
+    team: [
+      {
+        id: 1,
+        name: 'Sarah Martinez',
+        role: 'Owner & Head Nutritionist',
+        bio: 'Sarah has been in the pet industry for 15 years and holds a certification in pet nutrition. She is passionate about helping dogs live their best, healthiest lives through proper raw feeding.',
+      },
+      {
+        id: 2,
+        name: 'Michael Chen',
+        role: 'Nutrition Advisor',
+        bio: 'Michael brings 8 years of raw feeding expertise and loves working with first-time raw feeders. He specializes in helping picky eaters find their perfect protein.',
+      },
+    ],
   },
   {
     slug: 'massapequa',
@@ -41,6 +57,22 @@ export const locations = [
       { text: 'Pet Friendly', icon: 'ti-paw' },
       { text: 'Neighborhood Staple', icon: 'ti-home' },
       { text: 'Independently Owned', icon: 'ti-star' },
+    ],
+    story: 'The K9 Shop Massapequa serves the vibrant North Shore community with a deep commitment to raw nutrition education. We saw a need for a trusted local resource where dog owners could learn about species-appropriate diets without judgment or pressure.',
+    traditions: 'Our signature Pup Pawty happens every first Saturday of the month where customers bring their dogs for meet-and-greets, samples, and nutrition talks. We also maintain a detailed customer database so we can offer personalized rotation recommendations.',
+    team: [
+      {
+        id: 1,
+        name: 'Jennifer Rodriguez',
+        role: 'Store Manager & Nutrition Expert',
+        bio: 'Jennifer has a background in veterinary nutrition and 10+ years working with raw-fed dogs. She is known for her patience and ability to customize feeding plans.',
+      },
+      {
+        id: 2,
+        name: 'David Park',
+        role: 'Customer Success Specialist',
+        bio: 'David ensures every customer feels welcome and supported on their raw feeding journey. With his own three raw-fed dogs, he brings genuine passion and real-world experience.',
+      },
     ],
   },
   {
@@ -64,6 +96,22 @@ export const locations = [
       { text: 'Community-Focused', icon: 'ti-home' },
       { text: 'Independently Owned', icon: 'ti-star' },
     ],
+    story: 'The K9 Shop Lynbrook brings raw nutrition education directly to the South Shore community. We started with a simple mission: to prove that dogs thrive on whole, nutritionally complete raw food.',
+    traditions: 'Every Friday evening, we host Raw & Chill sessions where customers can drop in, ask questions, and connect with other raw-feeding families. We also support local rescues by providing discounted products.',
+    team: [
+      {
+        id: 1,
+        name: 'Amanda Wells',
+        role: 'Owner & Senior Nutritionist',
+        bio: 'Amanda founded our Lynbrook location after seeing the transformative impact raw feeding had on her own rescue dogs. She is certified in canine nutrition.',
+      },
+      {
+        id: 2,
+        name: 'Tommy Deluca',
+        role: 'Raw Feeding Coach',
+        bio: 'Tommy specializes in helping anxious dog owners transition to raw feeding. His calm, methodical approach has helped over 200 families make the switch successfully.',
+      },
+    ],
   },
   {
     slug: 'east-northport',
@@ -85,6 +133,22 @@ export const locations = [
       { text: 'Pet Friendly', icon: 'ti-paw' },
       { text: 'Local Expert', icon: 'ti-home' },
       { text: 'Independently Owned', icon: 'ti-star' },
+    ],
+    story: 'Our East Northport location is the heart of raw nutrition education for the North Shore. We believe that informed pet parents make the best decisions for their dogs.',
+    traditions: 'We host monthly Nutrition Nights with guest speakers from the veterinary and pet health worlds. Our Success Stories board celebrates the transformations we have witnessed.',
+    team: [
+      {
+        id: 1,
+        name: 'Lisa Thompson',
+        role: 'Founder & Lead Nutritionist',
+        bio: 'Lisa spent 12 years in conventional pet nutrition before discovering raw feeding remarkable benefits. Now she is dedicated to helping others experience the same health breakthroughs.',
+      },
+      {
+        id: 2,
+        name: 'Marcus Johnson',
+        role: 'Feeding Specialist',
+        bio: 'Marcus has worked with senior dogs, puppies, and everything in between. His expertise in custom rotation planning ensures every dog gets exactly what they need.',
+      },
     ],
   },
   {
@@ -108,6 +172,22 @@ export const locations = [
       { text: 'Local Favorite', icon: 'ti-home' },
       { text: 'Independently Owned', icon: 'ti-star' },
     ],
+    story: 'The K9 Shop Manorville serves the beautiful East End communities with a focus on whole-dog health through raw nutrition. We are passionate about proving that raw feeding is for every dog.',
+    traditions: 'Every season, we host Park Day meetups where raw-fed dogs and their owners gather to celebrate raw feeding culture. We also partner with local veterinarians to offer wellness talks.',
+    team: [
+      {
+        id: 1,
+        name: 'Victor Santos',
+        role: 'Owner & Raw Feeding Expert',
+        bio: 'Victor has been in the pet retail industry for 18 years and saw raw feeding revolutionize his own rescue dog quality of life. He opened our Manorville location to bring that transformation.',
+      },
+      {
+        id: 2,
+        name: 'Kristine Adams',
+        role: 'Nutritionist & Customer Care',
+        bio: 'Kristine specializes in working with senior dogs and dogs with food sensitivities. Her compassionate approach and detailed knowledge make her invaluable to families.',
+      },
+    ],
   },
   {
     slug: 'greenville',
@@ -130,6 +210,22 @@ export const locations = [
       { text: 'On Swamp Rabbit Trail', icon: 'ti-map-pin' },
       { text: 'Independently Owned', icon: 'ti-star' },
     ],
+    story: 'Our Greenville location brings raw nutrition education to the thriving South Carolina Upstate. We discovered that Southern dog owners were hungry for an alternative to conventional pet food.',
+    traditions: 'Every Saturday morning, we host Trail Walks where raw-fed dogs and their owners meet up on the nearby Swamp Rabbit Trail. We are also deeply involved with local rescue organizations.',
+    team: [
+      {
+        id: 1,
+        name: 'Ashley Crawford',
+        role: 'Owner & Senior Nutritionist',
+        bio: 'Ashley relocated to Greenville to open The K9 Shop because she saw the need and the opportunity. Her enthusiasm for raw feeding is contagious.',
+      },
+      {
+        id: 2,
+        name: 'Tyrone Williams',
+        role: 'Feeding Specialist',
+        bio: 'Tyrone grew up around dogs and brings a natural, intuitive understanding to raw nutrition. He is especially skilled at working with rescue dogs.',
+      },
+    ],
   },
   {
     slug: 'naples',
@@ -151,6 +247,22 @@ export const locations = [
       { text: 'Pet Friendly', icon: 'ti-paw' },
       { text: 'Tropical Living', icon: 'ti-map-pin' },
       { text: 'Independently Owned', icon: 'ti-star' },
+    ],
+    story: 'The K9 Shop Naples brings the raw feeding revolution to sunny Southwest Florida. We realized that Gulf Coast dogs face unique challenges that make raw nutrition especially important.',
+    traditions: 'Every month, we host Beach Days where customers bring their raw-fed dogs for outdoor socialization on a designated pet-friendly beach area. We also offer seasonal transition guides.',
+    team: [
+      {
+        id: 1,
+        name: 'Natalie Rodriguez',
+        role: 'Owner & Pet Nutritionist',
+        bio: 'Natalie discovered raw feeding while living in South Carolina and fell in love with the results. She moved to Naples to establish our Gulf Coast location.',
+      },
+      {
+        id: 2,
+        name: 'Brandon Cole',
+        role: 'Customer Experience Manager',
+        bio: 'Brandon grew up in Florida and understands the unique needs of Gulf Coast dogs. His friendly demeanor and comprehensive knowledge make him the perfect guide.',
+      },
     ],
   },
 ];
