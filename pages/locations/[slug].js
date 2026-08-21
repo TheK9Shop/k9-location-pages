@@ -2,6 +2,7 @@ import { getLocationBySlug, locations } from '@/data/locations';
 import Navigation from '@/components/Location/Navigation';
 import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
+import InfoBar from '@/components/Location/InfoBar';
 import { useState } from 'react';
 
 export default function LocationPage({ location }) {
@@ -16,6 +17,7 @@ export default function LocationPage({ location }) {
       <Navigation location={location} />
       <Hero location={location} />
       <StickyTabs activeTab={activeTab} onTabChange={setActiveTab} />
+      <InfoBar location={location} />
       
       <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto' }}>
         <h2>Section content for: {activeTab}</h2>
