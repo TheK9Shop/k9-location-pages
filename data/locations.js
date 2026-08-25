@@ -36,6 +36,42 @@ export const locations = [
         bio: 'Michael brings 8 years of raw feeding expertise and loves working with first-time raw feeders. He specializes in helping picky eaters find their perfect protein.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'K-9 Kraving', name: 'Beef Patties', description: 'Grass-fed beef patties. Perfect starter product for new raw feeders.' },
+      { id: 2, brand: 'Albrights', name: 'Chicken & Vegetables', description: 'Complete chicken blend with organic vegetables and supplements.' },
+      { id: 3, brand: 'Dr. Harvey\'s', name: 'Freeze-Dried Beef', description: 'Premium freeze-dried beef for picky eaters.' },
+      { id: 4, brand: 'K-9 Kraving', name: 'Turkey & Organ Blend', description: 'Whole prey model turkey with organs.' },
+      { id: 5, brand: 'Raw Dynamics', name: 'Beef Variety Pack', description: 'Mix of beef cuts for rotation feeding.' },
+      { id: 6, brand: 'Primal', name: 'Chicken Nuggets', description: 'Convenient bite-sized chicken portions.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 3, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+        { id: 4, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 5, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 6, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 7, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 8, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -100,6 +136,42 @@ export const locations = [
         bio: 'David ensures every customer feels welcome and supported on their raw feeding journey. With his own three raw-fed dogs, he brings genuine passion and real-world experience.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'Primal', name: 'Chicken Nuggets', description: 'Bite-sized frozen chicken nuggets. Great for portion control.' },
+      { id: 2, brand: 'K-9 Kraving', name: 'Beef & Organ', description: 'Complete beef blend with heart, liver, and kidney.' },
+      { id: 3, brand: 'Smack', name: 'Lamb & Vegetables', description: 'New Zealand lamb with local veggies.' },
+      { id: 4, brand: 'Vital Essentials', name: 'Turkey Patties', description: 'All-natural turkey, perfect for sensitive dogs.' },
+      { id: 5, brand: 'Answers Pet Food', name: 'Fish Formula', description: 'Wild-caught fish with omega-3s for skin & coat.' },
+      { id: 6, brand: 'Raw Dynamics', name: 'Pork Variety', description: 'Heritage pork for rotation feeding.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 3, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 4, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 5, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 6, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+        { id: 7, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 8, name: 'AIProvide', slug: 'aiprovide', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -164,6 +236,42 @@ export const locations = [
         bio: 'Tommy specializes in helping anxious dog owners transition to raw feeding. His calm, methodical approach has helped over 200 families make the switch successfully.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'Raw Dynamics', name: 'Beef Variety Pack', description: 'Mix of different beef cuts for rotation.' },
+      { id: 2, brand: 'Dr. Harvey\'s', name: 'Freeze-Dried Beef', description: 'Premium option for picky eaters.' },
+      { id: 3, brand: 'K-9 Kraving', name: 'Whole Chicken', description: 'Complete whole prey model chicken.' },
+      { id: 4, brand: 'Primal', name: 'Duck Patties', description: 'Novel protein for dogs with sensitivities.' },
+      { id: 5, brand: 'Smack', name: 'Kangaroo Blend', description: 'Lean Australian kangaroo meat.' },
+      { id: 6, brand: 'Vital Essentials', name: 'Rabbit Formula', description: 'Alternative protein, high in taurine.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 3, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+        { id: 4, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 5, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 6, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 7, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 8, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -228,6 +336,42 @@ export const locations = [
         bio: 'Marcus has worked with senior dogs, puppies, and everything in between. His expertise in custom rotation planning ensures every dog gets exactly what they need.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'Answers Pet Food', name: 'Fish Formula', description: 'Wild-caught fish with omega-3s.' },
+      { id: 2, brand: 'K-9 Kraving', name: 'Beef Patties', description: 'Grass-fed beef, ideal for beginners.' },
+      { id: 3, brand: 'Vital Essentials', name: 'Turkey Patties', description: 'All-natural turkey with organs.' },
+      { id: 4, brand: 'Smack', name: 'Lamb & Vegetables', description: 'Complete lamb blend with greens.' },
+      { id: 5, brand: 'Raw Dynamics', name: 'Venison Mix', description: 'Lean venison for rotation.' },
+      { id: 6, brand: 'Primal', name: 'Chicken Nuggets', description: 'Convenient frozen portions.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+        { id: 3, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 4, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 5, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 6, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 7, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 8, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -292,6 +436,42 @@ export const locations = [
         bio: 'Kristine specializes in working with senior dogs and dogs with food sensitivities. Her compassionate approach is invaluable to families.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'Smack', name: 'Kangaroo Blend', description: 'Lean Australian protein.' },
+      { id: 2, brand: 'K-9 Kraving', name: 'Whole Chicken', description: 'Complete whole prey model.' },
+      { id: 3, brand: 'Vital Essentials', name: 'Rabbit Formula', description: 'Alternative protein option.' },
+      { id: 4, brand: 'Raw Dynamics', name: 'Pork Mix', description: 'Heritage pork variety.' },
+      { id: 5, brand: 'Primal', name: 'Duck Patties', description: 'Novel protein for sensitive dogs.' },
+      { id: 6, brand: 'Answers Pet Food', name: 'Fish & Veggie', description: 'Complete ocean formula.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 3, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 4, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 5, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 6, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+        { id: 7, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 8, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -356,6 +536,42 @@ export const locations = [
         bio: 'Tyrone grew up around dogs and brings a natural, intuitive understanding to raw nutrition. He is especially skilled at working with rescue dogs.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'K-9 Kraving', name: 'Beef & Organ', description: 'Complete beef with organs.' },
+      { id: 2, brand: 'Primal', name: 'Chicken Nuggets', description: 'Convenient frozen portions.' },
+      { id: 3, brand: 'Raw Dynamics', name: 'Beef Variety', description: 'Mix of cuts for rotation.' },
+      { id: 4, brand: 'Vital Essentials', name: 'Turkey Patties', description: 'All-natural turkey formula.' },
+      { id: 5, brand: 'Answers Pet Food', name: 'Fish & Veggie', description: 'Ocean blend with vegetables.' },
+      { id: 6, brand: 'Smack', name: 'Lamb & Greens', description: 'New Zealand lamb blend.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 2, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 3, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 4, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 5, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+        { id: 6, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 7, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 8, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -420,6 +636,42 @@ export const locations = [
         bio: 'Brandon grew up in Florida and understands the unique needs of Gulf Coast dogs. His friendly demeanor and comprehensive knowledge make him the perfect guide.',
       },
     ],
+    featuredProducts: [
+      { id: 1, brand: 'Vital Essentials', name: 'Turkey Patties', description: 'All-natural turkey for Florida heat.' },
+      { id: 2, brand: 'K-9 Kraving', name: 'Fish Blend', description: 'Omega-3 rich for coat health.' },
+      { id: 3, brand: 'Primal', name: 'Duck Patties', description: 'Novel protein option.' },
+      { id: 4, brand: 'Raw Dynamics', name: 'Rabbit Mix', description: 'Lean protein for tropical climate.' },
+      { id: 5, brand: 'Answers Pet Food', name: 'Fish Formula', description: 'Complete ocean blend.' },
+      { id: 6, brand: 'Smack', name: 'Kangaroo Blend', description: 'Lean Australian protein.' },
+    ],
+    brands: {
+      food: [
+        { id: 1, name: 'Vital Essentials', slug: 'vital-essentials', logo: '🥩' },
+        { id: 2, name: 'K-9 Kraving', slug: 'k9-kraving', logo: '🥩' },
+        { id: 3, name: 'Primal', slug: 'primal', logo: '🥩' },
+        { id: 4, name: 'Raw Dynamics', slug: 'raw-dynamics', logo: '🥩' },
+        { id: 5, name: 'Answers Pet Food', slug: 'answers-pet-food', logo: '🥩' },
+        { id: 6, name: 'Smack', slug: 'smack', logo: '🥩' },
+        { id: 7, name: 'Albrights', slug: 'albrights', logo: '🥩' },
+        { id: 8, name: 'Dr. Harvey\'s', slug: 'dr-harveys', logo: '🥩' },
+      ],
+      treats: [
+        { id: 1, name: 'Bully Chew', slug: 'bully-chew', logo: '🦴' },
+        { id: 2, name: 'Canophera', slug: 'canophera', logo: '🦴' },
+        { id: 3, name: 'Durkha', slug: 'durkha', logo: '🦴' },
+        { id: 4, name: 'Farm Hounds', slug: 'farm-hounds', logo: '🦴' },
+        { id: 5, name: 'Puree Primal', slug: 'puree-primal', logo: '🦴' },
+        { id: 6, name: 'Gaines', slug: 'gaines', logo: '🦴' },
+      ],
+      supplements: [
+        { id: 1, name: 'Adored Beast', slug: 'adored-beast', logo: '💊' },
+        { id: 2, name: 'Amber Naturals', slug: 'amber-naturals', logo: '💊' },
+        { id: 3, name: 'Brilliant', slug: 'brilliant', logo: '💊' },
+        { id: 4, name: 'Bully Crew', slug: 'bully-crew', logo: '💊' },
+        { id: 5, name: 'CBD Dog Health', slug: 'cbd-dog-health', logo: '💊' },
+        { id: 6, name: 'Coco Therapy', slug: 'coco-therapy', logo: '💊' },
+      ],
+    },
     events: [
       {
         id: 1,
@@ -452,3 +704,7 @@ export const locations = [
 export const getLocationBySlug = (slug) => {
   return locations.find((loc) => loc.slug === slug);
 };
+EOFgit add data/locations.js
+git commit -m "Add test data: Featured Products and brand categories for all 7 locations"
+git push origin main
+
