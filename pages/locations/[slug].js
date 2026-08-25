@@ -4,12 +4,11 @@ import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
 import InfoBar from '@/components/Location/InfoBar';
 import About from '@/components/Location/About';
+import FeaturedProducts from '@/components/Location/FeaturedProducts';
+import WhatWeCarry from '@/components/Location/WhatWeCarry';
 import Events from '@/components/Location/Events';
-import { useState } from 'react';
 
 export default function LocationPage({ location }) {
-  const [activeTab, setActiveTab] = useState('about');
-
   if (!location) {
     return <div>Location not found</div>;
   }
@@ -18,18 +17,24 @@ export default function LocationPage({ location }) {
     <div>
       <Navigation location={location} />
       <Hero location={location} />
-      <StickyTabs activeTab={activeTab} onTabChange={setActiveTab} />
+      <StickyTabs />
       <InfoBar location={location} />
       
-      {activeTab === 'about' && <About location={location} />}
-      {activeTab === 'events' && <Events location={location} />}
-      
-      {activeTab !== 'about' && activeTab !== 'events' && (
-        <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2>Section content for: {activeTab}</h2>
-          <p>More sections coming soon...</p>
-        </div>
-      )}
+      {/* About Section */}
+      <div id="about">
+        <About location={location} />
+      </div>
+
+      {/* Featured Products Section */}
+      <FeaturedProducts location={location} />
+
+      {/* What We Carry Section */}
+      <WhatWeCarry location={location} />
+
+      {/* Events Section */}
+      <div id="events">
+        <Events location={location} />
+      </div>
     </div>
   );
 }
