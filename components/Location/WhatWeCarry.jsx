@@ -46,8 +46,8 @@ export default function WhatWeCarry({ location }) {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                   {visibleBrands.map((brand) => (
-                    <a key={brand.id} href={`https://instore-pickup.replit.app/instore/brand?location=${location.slug}&brand=${brand.slug}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '1', background: '#FFF', border: '1px solid #E5E5E5', borderRadius: '4px', cursor: 'pointer', textDecoration: 'none', transition: 'all 0.2s', padding: '12px', textAlign: 'center' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(192, 57, 43, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.boxShadow = 'none'; }} title={brand.name}>
-                      <span style={{ fontSize: '32px', lineHeight: '1' }}>{brand.logo}</span>
+                    <a key={brand.id} href={`https://instore-pickup.replit.app/instore/brand?location=${location.slug}&brand=${brand.slug}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '1', background: '#FFF', border: '1px solid #E5E5E5', borderRadius: '4px', cursor: 'pointer', textDecoration: 'none', transition: 'all 0.2s', padding: '12px', textAlign: 'center', overflow: 'hidden' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(192, 57, 43, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.boxShadow = 'none'; }} title={brand.name}>
+                      <img src={brand.logo} alt={brand.name} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                     </a>
                   ))}
                 </div>
