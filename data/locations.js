@@ -541,7 +541,7 @@ export const locations = [
       { id: 2, brand: 'Primal', name: 'Chicken Nuggets', description: 'Convenient frozen portions.' },
       { id: 3, brand: 'Raw Dynamics', name: 'Beef Variety', description: 'Mix of cuts for rotation.' },
       { id: 4, brand: 'Vital Essentials', name: 'Turkey Patties', description: 'All-natural turkey formula.' },
-      { id: 5, brand: 'Answers Pet Food', name: 'Fish & Veggie', description: 'Ocean blend with vegetables.' },
+      { id: 5, brand: 'Answers Pet Food', name: 'Fish & Veggie', description: 'Complete ocean formula.' },
       { id: 6, brand: 'Smack', name: 'Lamb & Greens', description: 'New Zealand lamb blend.' },
     ],
     brands: {
@@ -704,7 +704,3 @@ export const locations = [
 export const getLocationBySlug = (slug) => {
   return locations.find((loc) => loc.slug === slug);
 };
-EOFgit add data/locations.js
-git commit -m "Add test data: Featured Products and brand categories for all 7 locations"
-git push origin main
-

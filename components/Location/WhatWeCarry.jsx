@@ -29,7 +29,6 @@ export default function WhatWeCarry({ location }) {
           </p>
         </div>
 
-        {/* Categories */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
           {categories.map((category) => {
             const categoryBrands = getBrandsByCategory(category.id);
@@ -38,7 +37,6 @@ export default function WhatWeCarry({ location }) {
 
             return (
               <div key={category.id}>
-                {/* Category Header */}
                 <div style={{ marginBottom: '24px' }}>
                   <h3 style={{ fontSize: '16px', fontWeight: '900', color: '#1A1A1A', textTransform: 'uppercase', margin: '0 0 4px 0', letterSpacing: '0.08em' }}>
                     {category.icon} {category.label}
@@ -46,57 +44,16 @@ export default function WhatWeCarry({ location }) {
                   <div style={{ width: '40px', height: '2px', background: '#C0392B' }}></div>
                 </div>
 
-                {/* Brands Grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                   {visibleBrands.map((brand) => (
-                    
-                      key={brand.id}
-                      href={`https://instore-pickup.replit.app/instore/brand?location=${location.slug}&brand=${brand.slug}`}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        aspect: '1',
-                        background: '#FFF',
-                        border: '1px solid #E5E5E5',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s',
-                        padding: '12px',
-                        textAlign: 'center',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#C0392B';
-                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(192, 57, 43, 0.1)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '#E5E5E5';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
-                      title={brand.name}
-                    >
+                    <a key={brand.id} href={`https://instore-pickup.replit.app/instore/brand?location=${location.slug}&brand=${brand.slug}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', aspectRatio: '1', background: '#FFF', border: '1px solid #E5E5E5', borderRadius: '4px', cursor: 'pointer', textDecoration: 'none', transition: 'all 0.2s', padding: '12px', textAlign: 'center' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(192, 57, 43, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.boxShadow = 'none'; }} title={brand.name}>
                       <span style={{ fontSize: '32px', lineHeight: '1' }}>{brand.logo}</span>
                     </a>
                   ))}
                 </div>
 
-                {/* More Button */}
                 {categoryBrands.length > 6 && (
-                  <button
-                    onClick={() => setExpandedCategory(isExpanded ? null : category.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      fontSize: '12px',
-                      fontWeight: '900',
-                      color: '#C0392B',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      cursor: 'pointer',
-                      padding: '0',
-                    }}
-                  >
+                  <button onClick={() => setExpandedCategory(isExpanded ? null : category.id)} style={{ background: 'none', border: 'none', fontSize: '12px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', letterSpacing: '0.08em', cursor: 'pointer', padding: '0' }}>
                     {isExpanded ? '← Show Less' : `More (${categoryBrands.length - 6}+) →`}
                   </button>
                 )}
