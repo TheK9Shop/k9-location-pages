@@ -462,3 +462,6 @@ export const locations = [
     events: [],
   },
 ];
+export const getLocationBySlug = (slug) => {
+  return locations.find(location => location.slug === slug);
+};
