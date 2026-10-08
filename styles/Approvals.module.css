@@ -1,0 +1,205 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+}
+
+.header p {
+  color: #666;
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 18px;
+}
+
+.list {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.field {
+  background: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cardContent {
+  margin-bottom: 20px;
+}
+
+.submission {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.submission p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.changePreview {
+  margin-top: 15px;
+}
+
+.changePreview p {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.changePreview pre {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 12px;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.approve {
+  background: #28a745;
+  color: white;
+}
+
+.approve:hover {
+  background: #218838;
+}
+
+.reject {
+  background: #dc3545;
+  color: white;
+}
+
+.reject:hover {
+  background: #c82333;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modalContent p {
+  margin: 0 0 20px 0;
+  color: #666;
+}
+
+.modalContent textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+}
+
+.modalActions button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  background: #e0e0e0;
+  color: #333;
+}
+
+.rejectBtn {
+  background: #dc3545 !important;
+  color: white !important;
+}
+
+.rejectBtn:hover {
+  background: #c82333 !important;
+}

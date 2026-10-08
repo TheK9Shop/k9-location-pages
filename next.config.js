@@ -2,7 +2,33 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: false,
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent-lga3-3.xx.fbcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'thek9shop.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'greaterlongisland.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+    ],
   },
   async headers() {
     return [

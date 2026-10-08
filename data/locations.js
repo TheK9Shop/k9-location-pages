@@ -9,15 +9,29 @@ export const locations = [
     phone: '(631) 589-1234',
     email: 'bohemia@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/bohemia-hero.jpg',
     about: {
-      title: 'Bohemia - Raw Pet Food Specialists',
-      description: 'Our Bohemia location is the heart of The K9 Shop, bringing premium raw nutrition and wellness products to Long Island families and their furry companions.',
-    },
-    team: [
-      { name: 'Sarah Johnson', role: 'Store Manager', image: '/images/sarah.jpg' },
-      { name: 'Mike Davis', role: 'Nutrition Expert', image: '/images/mike.jpg' },
-    ],
+  title: 'Bohemia - Raw Pet Food Specialists',
+  description: 'Our Bohemia location is the second corporate K9 Shop to open on Long Island, bringing premium raw nutrition and wellness products to Long Island families and their furry companions.',
+},
+story: 'The K9 Shop is the brainchild of Anya and Robert Tucker, who saw a need for affordable, high-quality raw food on Long Island. We believe every pet deserves a species-appropriate diet. Starting with just a few products, we\'ve grown into a comprehensive resource for all your pet\'s needs. Our philosophy is simple: one-on-one care, science-based knowledge, and education. We\'re passionate about helping customers make healthier choices for their pets through ongoing learning and research.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],    
+team: [
+  { name: 'Elana', role: 'Store Manager', image: '/images/elana.jpg', bio: 'Passionate about helping pets thrive with premium nutrition. With years of expertise in raw feeding, Elana guides customers to the perfect diet for their furry friends.' },
+  { name: 'Sue', role: 'Nutrition Expert', image: '/images/sue.jpg', bio: 'Dedicated to pet wellness and educated customer service. Sue specializes in helping pets with dietary sensitivities find the right balance.' },
+  { name: 'Bonnie', role: 'Nutrition Expert', image: '/images/bonnie.jpg', bio: 'Expert in breed-specific nutrition and raw food transitions. Bonnie is committed to your pet\'s optimal health and longevity.' },
+  { name: 'Natalia', role: 'Nutrition Expert', image: '/images/natalia.jpg', bio: 'Knowledgeable and caring team member who loves learning about different raw food options. Natalia helps match pets with quality products.' },
+  { name: 'Emilee', role: 'Nutrition Expert', image: '/images/emilee.jpg', bio: 'Passionate about natural pet care and premium nutrition. Emilee takes time to understand your pet\'s unique needs and lifestyle.' },
+],
+gallery: [
+  'https://lh3.googleusercontent.com/DAkiTEgLAt9lQziSLJ11X3hparnVk_ytAeLh68-B3AHZAtldkuWZwjKTjfduMW8CgL23eKu6gjVaWNQwpg=w1368',
+  'https://lh3.googleusercontent.com/1QyM8jjl5a8NvuFhOYohUEe4hXvnYqVabsMS8ckxfjsaX17twsk1l90PCa2yfphY5FzodTOLlSsISvMktA=w1368',
+  'https://lh3.googleusercontent.com/IFGTNMSTmU54wzmAHKon7aVnlxV8vGOGx1x9_pr5BVNIzLXCoYz06m5YvrDUycEO-LjgSKbnfb3zTZ8MsA=w1368',
+  'https://lh3.googleusercontent.com/rxOYsDA9zSgq6uHWAzzBKt9zH9y_3ikDdWw5uLYhy6fbDHy4fqgVvATzKj8ect50s-rsX7-QztwTHBKemA=w1368',
+  'https://lh3.googleusercontent.com/rO7tdP0o9rqgVMee0SUihnbYhkhGk1LoLqTDyOCIfLEk3oxjqusKWNm8DKcoE-WEBgqACbaVA41mnm0nSQ=w1368',
+  'https://lh3.googleusercontent.com/hhT433FkhjHKmCIFgalkCuwaOahAkUVfbce4K9bnCj5ZUYxhq-klQpnqJeZLawAYjUD9cziKtWXqzi3AgA=w1368',
+],
+heroImage: 'https://thek9shop.com/cdn/shop/files/Bohemia.jpg?v=1685606483',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -119,6 +133,39 @@ export const locations = [
         { id: 'biostar', name: 'Biostar', slug: 'biostar', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/biostar.avif` },
       ],
     },
+        reviews: [
+      {
+        id: 1,
+        name: 'Janine Decaró',
+        quote: 'Unique and different foods for pets with allergies. Very interesting. They had freeze dried shrimp and freeze dried rabbit treats for cats. My cat really liked it! Won\'t eat regular treats anymore. LOL',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Joseph Perhauz',
+        quote: 'Amazing selection and very knowledgeable.',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Sim Singh',
+        quote: 'I never knew about raw food until I found the K9 Shop. The ladies here are very friendly, kind and knowledgeable. Going raw is the best thing I ever did. It\'s always a pleasure coming here and Daniel loves coming here too.',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Lisa Turpin',
+        quote: 'I am on a road trip but left my dog\'s raw food at home. Thank goodness we found this place. Staff member was so helpful finding a replacement that was closest to what my pup eats to minimize tummy issues. Our trip continues with barely an interruption!',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Raul Narea Jr',
+        quote: 'Very friendly, great all natural options for my fur baby who has allergies to chicken and is a very picky eater.',
+        rating: 5,
+      },
+    ],
+    
     events: [
       {
         id: 1,
@@ -155,15 +202,31 @@ export const locations = [
     phone: '(516) 797-5678',
     email: 'massapequa@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/massapequa-hero.jpg',
     about: {
       title: 'Massapequa - Premium Pet Nutrition Hub',
       description: 'Serving the Massapequa community with the highest quality raw pet food and wellness products.',
     },
+story: 'The K9 Shop is the brainchild of Anya and Robert Tucker, who saw a need for affordable, high-quality raw food on Long Island. We believe every pet deserves a species-appropriate diet. Starting with just a few products, we\'ve grown into a comprehensive resource for all your pet\'s needs. Our philosophy is simple: one-on-one care, science-based knowledge, and education. We\'re passionate about helping customers make healthier choices for their pets through ongoing learning and research.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],    
     team: [
-      { name: 'Lisa Chen', role: 'Store Manager', image: '/images/lisa.jpg' },
-      { name: 'Tom Rodriguez', role: 'Product Specialist', image: '/images/tom.jpg' },
-    ],
+  { name: 'Frankie', role: 'Store Manager', image: '/images/frankie.jpg' },
+  { name: 'Lina', role: 'Nutrition Expert', image: '/images/lina.jpg' },
+  { name: 'Danie', role: 'Nutrition Expert', image: '/images/danie.jpg' },
+  { name: 'Brendan', role: 'Nutrition Expert', image: '/images/brendan.jpg' },
+  { name: 'Debbie', role: 'Nutrition Expert', image: '/images/debbie.jpg' },
+  { name: 'Skye', role: 'Nutrition Expert', image: '/images/skye.jpg' },
+],
+gallery: [
+  'https://lh3.googleusercontent.com/EN2RbSaIiaFMYD8GmcvGeASBlU50D8rkuipNQnyz0s-23knDyQ61i55eWuRpuhNjsW5uMEZVqzxxD93aew=w1368',
+  'https://lh3.googleusercontent.com/nc85jMW9agVbs2oVjzGRXUe0K1dHFv-YbalkwS8t4eIGoszGrUL74_6G6QCzuQSozuDLkGs2iFqx4Nblpg=w1368',
+  'https://lh3.googleusercontent.com/lpUws46eHOgPweRT5cSzVniTX-r_htPTqTU3O0MfpCW38UHeBqIBX7pcXYxnGaoaaywi7fjwsmrjgNd7BA=w1368',
+  'https://lh3.googleusercontent.com/jnc4VtufVM2lx1dZ5WwHXgkOnb6UnuK3sVqkdYzX6-UM1GRvR6gvERuizRXWlIOfSn3N4XSiytkCJjvmKA=w1368',
+  'https://lh3.googleusercontent.com/3vQkO9Mdx_0zM2vegNlhAgipuDGGU6p53a3YH7hvqTkDvcIBSyz-_GDCD1XDPH2IfckeXrm-zEpjMkvupA=w1368',
+  'https://lh3.googleusercontent.com/3kYdX70nDX4aW4dUSLuw7LzP2yz5xLskbL83qdwuFmO1UNd0N1BJzkqHSP6DSFyQQQfaclvqGzx-SqiPgg=w1368',
+  'https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/659842602_1547923787342028_3515508717740976430_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3KmKawp0MQIQ7kNvwH_YjpR&_nc_oc=AdrjhDgJNkwuieptrL3mcY0eIGCqj9WxdxLcHLF70FZGGdHg2f7LnqHcAxoTz4g3rsAzhdxfRzR6eZcxGZKZuOx4&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=bc9h226q0D3AOqzVk8fv6g&_nc_ss=7b289&oh=00_AQNRSI6NaFiBmV7yrHr_eNJtyBkUHRFDCIEZY1RKDwwEsA&oe=6ACB45A8',
+   ],
+   heroImage: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkiWPNHj7dZxeYhtyaryObAFqzmyN-5qeSwEp1HSLYut-uux4ToZ1AcwR4Mnfnpsif266-N9Htvr2grbNhRxkiuFiSaUPkAOGpng8XOj1HuOoIF38pkOglU_qWDF9kco1kurpGA1A=s1360-w1360-h1020-rw',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -202,6 +265,38 @@ export const locations = [
         { id: 'wholistic', name: 'Wholistic Pet Organics', slug: 'wholistic-pet', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/wholistic_pet.png` },
       ],
     },
+          reviews: [
+      {
+        id: 1,
+        name: 'Charlie Nugent',
+        quote: '1st time there, great place. Very helpful staff and Danielle was awsome. We have been getting all our dog and cat food as well as treats here. The staff is very helpful and knowledgeable. Only place we get our raw and natural products from.',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Mike Bamonté',
+        quote: 'It was a pleasure going here! Danie took her time to help us with all of our questions and to pick out the best raw diet to transition our fur baby. Not only did she address all of our concerns but also made us feel comfortable to trust this switch! I absolutely recommend coming to this store for all of your pups dietary needs.',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Steven Terranova',
+        quote: 'Very welcoming staff who are patient and kind with customers. They are excellent listeners and do not pressure anyone into buying products. The quality of their products is excellent - as is the selection.',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Anthony Cruciata',
+        quote: 'Everyone of the staff members are amazing and extremely Knowledgeable. They helped me get my dog back to good health. They truly know their products and not just salesmen. So glad we started shopping here.',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Binny Singh',
+        quote: 'We love this shop! Love that I know if they carry the item, it\'s a good product! Everyone is always so helpful! And my pup loves going in there to get all the goodies and great scents! Especially his goat milk!',
+        rating: 5,
+      },
+    ], 
     events: [],
   },
   // LYNBROOK
@@ -213,14 +308,22 @@ export const locations = [
     phone: '(516) 593-2020',
     email: 'lynbrook@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/lynbrook-hero.jpg',
     about: {
       title: 'Lynbrook - Your Local Raw Pet Food Experts',
       description: 'Dedicated to providing Lynbrook families with premium raw diets and premium pet wellness products.',
     },
+    story: 'Welcome to The K9 Shop, your local source for premium raw pet food and nutrition. We\'re dedicated to providing your pet with species-appropriate diets and the expertise to support their health journey. Our team is committed to understanding each pet\'s unique needs and helping you make informed choices for optimal wellness.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],
     team: [
-      { name: 'Jennifer Park', role: 'Store Manager', image: '/images/jennifer.jpg' },
-    ],
+  { name: 'Darrin', role: 'Store Owner', image: '/images/darrin.jpg' },
+  { name: 'Rhonda', role: 'Nutrition Expert', image: '/images/rhonda.jpg' },
+  { name: 'Sydney', role: 'Nutrition Expert', image: '/images/sydney.jpg' },
+],
+gallery: [
+  'https://lh3.googleusercontent.com/pt330nezsIW-KYku3_81lS_CZV-kIqglrsObo49s-meABhnJ7GwAOvLJnUVK63j9FruygljZjvZ5ynev=w1368',
+],
+heroImage: 'https://thek9shop.com/cdn/shop/files/Lynbrook.jpg?v=1685612225',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -255,6 +358,39 @@ export const locations = [
         { id: 'pets-friend', name: 'Pet\'s Friend', slug: 'pets-friend', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/pets_friend.jpg` },
       ],
     },
+
+        reviews: [
+      {
+        id: 1,
+        name: 'M.J.',
+        quote: 'Owner Darrin is great, and the whole staff is helpful. The k9 beef and turkey blends, along with the green lipped mussels, are a huge hit with my dog. Switched up his diet from kibble to raw 3 years ago and never looked back (down the dry food aisle).',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Gabriel Taveras',
+        quote: 'Great dog food. Very natural with lots of variety. This food changed my dog\'s life!',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Timothy Quinn',
+        quote: 'Always a pleasure to shop at the store. Really friendly staff, very helpful and knowledgeable. Great to have a spot like this in the neighborhood, one that\'s puts the health of our pets first!',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Elizabeth Gutierrez',
+        quote: 'I always make an effort to feed my dog treats and food made with clean, quality ingredients, so I had no idea there was a place right around the corner from me. Darren was incredibly helpful, and the customer service was outstanding. You\'ve definitely gained a new customer!',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Erick Lopez',
+        quote: 'Amazing amazing you can call have a small question and everyone is always willing to help guide you in the right place been with k9 shop for 4 years have never looked back 💪🏼💪🏼🙏🏼🙏🏼🙏🏼 raw life',
+        rating: 5,
+      },
+    ],
     events: [],
   },
   // EAST NORTHPORT
@@ -266,12 +402,21 @@ export const locations = [
     phone: '(631) 261-0750',
     email: 'eastnorthport@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/east-northport-hero.jpg',
     about: {
       title: 'East Northport - Raw Pet Food Destination',
       description: 'Committed to helping East Northport pets thrive with our curated selection of raw and natural products.',
     },
-    team: [],
+    story: 'Welcome to The K9 Shop, your local source for premium raw pet food and nutrition. We\'re dedicated to providing your pet with species-appropriate diets and the expertise to support their health journey. Our team is committed to understanding each pet\'s unique needs and helping you make informed choices for optimal wellness.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],
+   team: [
+  { name: 'Patrick', role: 'Store Owner', image: '/images/patrick.jpg' },
+  { name: 'Ariana', role: 'Nutrition Expert', image: '/images/ariana.jpg' },
+],
+gallery: [
+  'https://lh3.googleusercontent.com/BzVKhIT8xQPeOHulnKGzNxDcJU_lOaFtIYhFn5fiC4LVRofPjJh3jyNyvm6ZQNx_7zB_AElJCz_u1m73=w1368',
+],
+heroImage: 'https://thek9shop.com/cdn/shop/files/East-northport.jpg?v=1685612721',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -306,6 +451,38 @@ export const locations = [
         { id: 'totoniks', name: 'Totoniks', slug: 'totoniks', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/totoniks.jpg` },
       ],
     },
+        reviews: [
+      {
+        id: 1,
+        name: 'Aleksó',
+        quote: 'Five stars just isnt enough for this place!! Top notch service to customers and all the paws. we foster A LOT and the team here is sooo knowledgeable to the million questions we ask and beyond kind to the pups we bring in after transport. Let me mention also the incredible success the raw diet has been for our dogs and all of our fosters!! AMAZING!! Thank you!!',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Barry Treanor',
+        quote: 'Can\'t rave enough how great this place is!! The staff is always so helpful, answering any questions I may have and giving updates on products they carry. The selection of different products is outstanding, from the various types of raw food to the organic supplements and numerous treats. The store always looks neat and is kept super clean. My dogs have been on a raw diet now for over 5 months and any issues they have had in the past, such as dry itchy skin, dull coat, and random ear infections are all gone. I am so thankful.',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Mike Clemente',
+        quote: 'Hands down the best shop for dogs. Arianna and Mike are super helpful and very knowledgeable. My husband and I bring our cane corso and he\'s always treated like he\'s one of theirs- he gets very spoiled with treats and lots of pets.',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Haydee Jean-Bart',
+        quote: 'Such a lovely store! Arianna was such a joy to work with. Very knowledgeable and helpful! They even have a little area to take some pictures with your dog! Would highly recommend. Loved bringing my dog!',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Thomas Hradek',
+        quote: 'They\'ve also helped us navigate allergy issues by offering suggestions and different options that are available.',
+        rating: 5,
+      },
+    ],
     events: [],
   },
   // MANORVILLE
@@ -317,12 +494,25 @@ export const locations = [
     phone: '(631) 369-2020',
     email: 'manorville@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/manorville-hero.jpg',
     about: {
       title: 'Manorville - Premiere Pet Nutrition Center',
       description: 'Serving the Manorville and surrounding community with premium raw pet food and wellness products.',
     },
-    team: [],
+    story: 'Welcome to The K9 Shop, your local source for premium raw pet food and nutrition. We\'re dedicated to providing your pet with species-appropriate diets and the expertise to support their health journey. Our team is committed to understanding each pet\'s unique needs and helping you make informed choices for optimal wellness.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],
+    team: [
+  { name: 'Anthony', role: 'Store Owner', image: '/images/anthony.jpg' },
+  { name: 'Monica', role: 'Owner', image: '/images/monica.jpg' },
+  { name: 'Juliana', role: 'Nutrition Expert', image: '/images/juliana.jpg' },
+],
+gallery: [
+  'https://thek9shop.com/cdn/shop/files/1.jpg?v=1713793158',
+  'https://greaterlongisland.com/cdn-cgi/image/quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2024/02/K9-Shop-Manorville-scaled.jpg',
+  'https://cdn.shopify.com/s/files/1/0681/3728/8000/files/Freeze-Dried_Dog_Food.jpg?v=1685703532',
+
+],
+heroImage: 'https://thek9shop.com/cdn/shop/files/1.jpg?v=1713793158',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -357,6 +547,38 @@ export const locations = [
         { id: 'tickless', name: 'Tickless', slug: 'tickless', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/Tickless-1.png` },
       ],
     },
+        reviews: [
+      {
+        id: 1,
+        name: 'Justin Vaughan',
+        quote: 'A++ as always. My dogs eat better than me now',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Justin Vaughan',
+        quote: 'LOVE this place, my 9 year old Shitzhu/Maltese mix was a nightmare when it came to food. We tried everything including Farmer\'s dog (he liked that for like a month and then no dice). When I saw this new store in Manorville, figured it was worth a shot and it\'s amazing. My dog runs to his bowl, he has more energy, and, this one is a keeper as we started using it about 6 months ago!!! I buy the treats as well and he loves every single thing I come home with!',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Evan Wanago',
+        quote: 'I cannot say ENOUGH good things about The K9 Shop!! Wonderful customer service and Santos took his time explaining to me the differences between raw or gently cooked and the benefits of each - as well as the benefits of additional products! Made my first big purchase and I can already tell I\'ll be back!',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Joan Kavanagh',
+        quote: 'Love love love! My husband and I not only love the products but the people here are super sweet and knowledgeable. Definitely worth the trip with your fur baby',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Gabriela Seymóre',
+        quote: 'Love love love! My husband and I not only love the products but the people here are super sweet and knowledgeable. Definitely worth the trip with your fur baby',
+        rating: 5,
+      },
+    ],
     events: [],
   },
   // GREENVILLE
@@ -368,12 +590,30 @@ export const locations = [
     phone: '(864) 555-0123',
     email: 'greenville@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/greenville-hero.jpg',
     about: {
       title: 'Greenville - South Carolina\'s Raw Pet Food Leader',
       description: 'Bringing premium raw nutrition and wellness products to the Greenville community.',
     },
-    team: [],
+    story: 'Welcome to The K9 Shop, your local source for premium raw pet food and nutrition. We\'re dedicated to providing your pet with species-appropriate diets and the expertise to support their health journey. Our team is committed to understanding each pet\'s unique needs and helping you make informed choices for optimal wellness.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],
+    team: [
+  { name: 'Barry', role: 'Store Owner', image: '/images/barry.jpg' },
+  { name: 'Val', role: 'Store Owner', image: '/images/val.jpg' },
+  { name: 'Suzanne', role: 'Nutrition Expert', image: '/images/suzanne.jpg' },
+  { name: 'Danny', role: 'Nutrition Expert', image: '/images/danny.jpg' },
+  { name: 'Haleigh', role: 'Nutrition Expert', image: '/images/haleigh.jpg' },
+],
+gallery: [
+  'https://lh3.googleusercontent.com/dHTbfKrtWC8FtO0-dbG5ycYuDKkwCrm9qeS4ZoKCDhTBhOnP-Qn6sLGPEhI3P_QYn4_dkbhGcJKaZSEV1w=w1368',
+  'https://lh3.googleusercontent.com/6AJYWlVIQBJQXa1cWnXgipJ3eCQ0kCG_EoeeFoEeG8_kx8A0hwcC-eIhHFU4ECPzirlK96FtbAu6oUzl_Q=w1368',
+  'https://lh3.googleusercontent.com/sjsIHGhPoUJUDhkdbIrNvBMm-ncoL_NSvb-ByRG8ogWRN0i4YzUR32S9UzFEP0lbPISRVNCpaZRezrT6JQ=w1368',
+  'https://lh3.googleusercontent.com/4zn2fchs_gJEEVCPjlamgmXuDQXTDTdLsFuN75f32duRuX4994kx3Lt1F42SOBArP5iVWBmegcSKh-j2=w1368',
+  'https://lh3.googleusercontent.com/J8taeVbvdXuW62lPjIBfAgc9hUNIF1I9Zt7JGIWhuMQGWP8UiT9jl18zVKRSS1VEAO8NsByn9EA0IKwR=w1368',
+  'https://lh3.googleusercontent.com/2DE086SZ7hVS6EwAQu6KSd0EhOGqHro6kTgf19247hGpFaVf855AQXwDaHFOYrhjcH54dog6BnuA8-l3=w1368',
+
+],
+heroImage: 'https://thek9shop.com/cdn/shop/files/1_greenville.jpg?v=1704896499',
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -408,6 +648,38 @@ export const locations = [
         { id: 'kidshell', name: 'KidShell', slug: 'kidshell', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/Ikid-shellMG_5981.avif` },
       ],
     },
+        reviews: [
+      {
+        id: 1,
+        name: 'Amanda Elrod',
+        quote: 'A pleasant experience. Everything you need, great customer service and very friendly. We will be back!',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Mycaiah Wood',
+        quote: 'Very nice people. Got a little ice cream cake and a bone for my dog\'s birthday. He loved both. Reasonable prices.',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Karen Docherty',
+        quote: 'Great service! The lady working was exceptionally kind and helpful finding the right food for our dog.',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'Sean Alford',
+        quote: 'This is a great place to shop! Reasonable prices and very friendly staff ! We will be going back !',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Amber Nafziger',
+        quote: 'Large selection of healthy treats!',
+        rating: 5,
+      },
+    ],
     events: [],
   },
   // NAPLES
@@ -419,12 +691,27 @@ export const locations = [
     phone: '(239) 555-0789',
     email: 'naples@thek9shop.com',
     hours: 'Mon-Sun 9AM-6PM',
-    heroImage: '/images/naples-hero.jpg',
     about: {
       title: 'Naples - Florida\'s Premium Raw Pet Food Destination',
       description: 'Serving Naples and Southwest Florida with premium raw nutrition and wellness products.',
     },
-    team: [],
+    story: 'Welcome to The K9 Shop, your local source for premium raw pet food and nutrition. We\'re dedicated to providing your pet with species-appropriate diets and the expertise to support their health journey. Our team is committed to understanding each pet\'s unique needs and helping you make informed choices for optimal wellness.',
+vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
+coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],
+    team: [
+  { name: 'Santos', role: 'Store Owner', image: '/images/santos.jpg' },
+  { name: 'Melissa', role: 'Store Owner', image: '/images/melissa.jpg' },
+],
+gallery: [
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlCF11zMnrmE5zLtNN2E86XbFoyCoCVSdmjriwGDKO-aBbHYqUpqKKz4s&s=10',
+  'https://lh3.googleusercontent.com/0QnCI30IHUxD7ss-1K1TlKw8kRNQlyzxzcNyDhd7dwqszmewFxMd085LZZv3QdHUySRCat3_xX8Yvm6x=w1368',
+  'https://lh3.googleusercontent.com/assgv2GEsRSuwUq3LkN1Nu-lL8Mfs-y4nRbWtUamcpPaNFtfqV-Jbaz4stX-6JURRgNbfEbnPqAzVu-R=w1368',
+  'https://lh3.googleusercontent.com/a59S0ZGpqQPUBIDfEUqsm7wQdoH8jQEyz-EUo0J2b6yrBdRtKs7TBVQRVqNYLmkaLM3G0z2x_cM54MmX=w1368',
+  'https://lh3.googleusercontent.com/E0j2zi-I5PT59OJ3ucmR8W4R5mElZ7KUNfWMlmCoyk2USxJ69Ssjt3ewsxeZUJpRAaWAg5UZ3EC2jMHH=w1368',
+  'https://lh3.googleusercontent.com/a-/ALV-UjWkYX817XCTfWE33-ciD8yZh90kwr2Hfze5GlWlj9-lYY6nIAM=w1368',
+],
+heroImage: 'https://lh3.googleusercontent.com/E0j2zi-I5PT59OJ3ucmR8W4R5mElZ7KUNfWMlmCoyk2USxJ69Ssjt3ewsxeZUJpRAaWAg5UZ3EC2jMHH=w1368',
+
     featuredProducts: [
       { id: 1, name: 'Primal Raw Chicken', price: '$12.99', image: '/images/product-1.jpg' },
       { id: 2, name: 'Shepherd Boy Beef', price: '$14.99', image: '/images/product-2.jpg' },
@@ -459,6 +746,38 @@ export const locations = [
         { id: 'pets-friend', name: 'Pet\'s Friend', slug: 'pets-friend', logo: `${IMAGE_BASE_URL}/wp-content/uploads/2026/08/pets_friend.jpg` },
       ],
     },
+        reviews: [
+      {
+        id: 1,
+        name: 'Jorge G',
+        quote: 'I\'m a local dog trainer and I stopped in the K9 shop today. Santo the owner was extremely helpful and knowledgeable.',
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: 'Chrissy Klingbiel',
+        quote: 'I cannot say enough wonderful things about The K9 Shop in Naples! From the moment I met Santos at the Farmers Market, to meeting his wife Melissa in their store. I walked in, they were incredibly knowledgeable, thorough, and genuinely invested in helping my dog. They took the time to listen to my concerns and helped me explore different solutions for my dog\'s itching and hot spots rather than just recommending a quick, one-size-fits-all answer.',
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: 'Lexi Perun',
+        quote: 'What really stood out to me was how much they cared. They went above and beyond to help me figure out what might work best, and I truly felt like they wanted to help my dog feel better just as much as I did. Their knowledge and willingness to take the time to explain everything has been incredibly helpful.',
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: 'J B',
+        quote: 'I\'m so grateful I found The K9 Shop and cannot recommend them highly enough to anyone looking for knowledgeable, caring people who truly love animals and want to help. Thank you for everything you\'ve done for my dog! ❤️🐾',
+        rating: 5,
+      },
+      {
+        id: 5,
+        name: 'Lenore Scarpati',
+        quote: 'My wife discovered this store 😊. The owners are very knowledgeable on what they sell. We decided once our stock of Farmers Dog runs out, this will be our go to place for our dog. I\'m not knocking our present choice, it served a purpose. But the owners sell equivalent quantity, or maybe better for less money. We would also like to support a business where there is passion and commitment to deliver such great customer service. If your in Naples, find this store 🙏',
+        rating: 5,
+      },
+    ],
     events: [],
   },
 ];

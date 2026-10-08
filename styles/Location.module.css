@@ -1,0 +1,274 @@
+/* Reviews Section */
+.reviewsSection {
+  padding: 80px 40px;
+  background: #f9f9f9;
+  margin: 60px 0;
+}
+
+.reviewsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviewsHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.reviewsHeader h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.reviewsHeader p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.reviewCard {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.reviewCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #c0392b;
+}
+
+.reviewRating {
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.reviewQuote {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
+.reviewName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c0392b;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 60px 20px;
+  }
+
+  .reviewsHeader h2 {
+    font-size: 24px;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Shop by Category Section */
+.shopByCategorySection {
+  padding: 80px 40px;
+  background: white;
+  margin: 60px 0;
+}
+
+.shopByCategoryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shopByCategoryHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.shopByCategoryHeader h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.shopByCategoryHeader p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.categoryCard {
+  background: #f9f9f9;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categoryCard:hover {
+  border-color: #c0392b;
+  box-shadow: 0 8px 20px rgba(192, 57, 43, 0.15);
+  transform: translateY(-4px);
+}
+
+.categoryImageWrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.categoryCard h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.categoryCard p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .shopByCategorySection {
+    padding: 60px 20px;
+  }
+
+  .shopByCategoryHeader h2 {
+    font-size: 24px;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .categoryCard {
+    padding: 20px 12px;
+  }
+
+  .categoryImageWrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+/* Gallery Section */
+.gallerySection {
+  padding: 80px 40px;
+  background: white;
+  margin: 60px 0;
+}
+
+.galleryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galleryHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.galleryHeader h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.galleryHeader p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 1;
+  background: #f0f0f0;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .galleryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallerySection {
+    padding: 60px 20px;
+  }
+
+  .galleryHeader h2 {
+    font-size: 24px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}

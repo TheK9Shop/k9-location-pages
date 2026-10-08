@@ -6,6 +6,9 @@ import InfoBar from '@/components/Location/InfoBar';
 import About from '@/components/Location/About';
 import FeaturedProducts from '@/components/Location/FeaturedProducts';
 import WhatWeCarry from '@/components/Location/WhatWeCarry';
+import ShopByCategory from '@/components/Location/ShopByCategory';
+import Gallery from '@/components/Location/Gallery';
+import Reviews from '@/components/Location/Reviews';
 import Events from '@/components/Location/Events';
 
 export default function LocationPage({ location }) {
@@ -30,6 +33,15 @@ export default function LocationPage({ location }) {
 
       {/* What We Carry Section */}
       <WhatWeCarry location={location} />
+
+      {/* Shop by Category Section */}
+      <ShopByCategory location={location} />
+
+      {/* Gallery Section */}
+      <Gallery location={location} />
+
+      {/* Reviews Section */}
+      <Reviews location={location} />
 
       {/* Events Section */}
       <div id="events">

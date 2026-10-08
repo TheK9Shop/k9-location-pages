@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default function About({ location }) {
-  const { name, address, email, story, traditions, team = [] } = location;
+  const { name, address, email, story, vision, coreValues, team = [] } = location;
 
   return (
     <div style={{ background: '#f9f9f7', padding: '60px 40px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ marginBottom: '60px' }}>
-          <div style={{ fontSize: '11px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ fontSize: '14px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ width: '24px', height: '2px', background: '#C0392B' }}></span>
             OUR STORY
           </div>
@@ -16,20 +16,44 @@ export default function About({ location }) {
           </h2>
         </div>
 
+        <div style={{ marginBottom: '60px' }}>
+          <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#444', margin: '0 0 24px 0' }}>
+            {story}
+          </p>
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', marginBottom: '60px' }}>
           <div>
             <div style={{ marginBottom: '40px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1A1A1A', marginBottom: '16px' }}>Our Mission</h3>
+              <div style={{ fontSize: '14px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ width: '24px', height: '2px', background: '#C0392B' }}></span>
+                OUR MISSION
+              </div>
               <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#444', margin: '0 0 24px 0' }}>
                 {story}
               </p>
             </div>
 
             <div style={{ marginBottom: '40px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1A1A1A', marginBottom: '16px' }}>Our Traditions</h3>
+              <div style={{ fontSize: '14px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ width: '24px', height: '2px', background: '#C0392B' }}></span>
+                OUR VISION
+              </div>
               <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#444', margin: '0 0 24px 0' }}>
-                {traditions}
+                {vision}
               </p>
+            </div>
+
+            <div style={{ marginBottom: '40px' }}>
+              <div style={{ fontSize: '14px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ width: '24px', height: '2px', background: '#C0392B' }}></span>
+                OUR CORE VALUES
+              </div>
+              <ul style={{ fontSize: '16px', lineHeight: '1.7', color: '#444', margin: '0', paddingLeft: '20px' }}>
+                {coreValues && coreValues.map((value, idx) => (
+                  <li key={idx} style={{ marginBottom: '8px' }}>{value}</li>
+                ))}
+              </ul>
             </div>
 
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '40px' }}>
@@ -44,7 +68,7 @@ export default function About({ location }) {
 
           <div>
             <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1A1A1A', marginBottom: '32px' }}>Our Team</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
               {team && team.length > 0 ? (
                 team.map((member) => (
                   <div key={member.id} style={{ background: '#FFF', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)', transition: 'transform 150ms, box-shadow 150ms' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 16px rgba(0, 0, 0, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)'; }}>

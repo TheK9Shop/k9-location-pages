@@ -4,8 +4,8 @@ export default function Hero({ location }) {
   const { name, state, title, address, phone, heroImage, attributes = [] } = location;
 
   return (
-    <div style={{ position: 'relative', background: '#1A1A1A', overflow: 'hidden', height: '500px' }}>
-      {heroImage && <img src={heroImage} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.35 }} />}
+    <div style={{ position: 'relative', background: '#1A1A1A', overflow: 'hidden', height: '350px', width: '100%' }}>
+      {heroImage && <img src={heroImage} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.5 }} />}
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%)' }}></div>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-end', padding: '48px 60px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         <div style={{ maxWidth: '700px' }}>
