@@ -42,7 +42,8 @@ export default function WhatWeCarry({ location }) {
         break;
 
       case 'pickup':
-        url = `https://instore-pickup.replit.app/instore/brand?location=${location.slug}&brand=${brand.slug}`;
+      case 'browse':
+        url = `https://instore-pickup.replit.app/instore/brand?location=${encodeURIComponent(location.slug)}&brand=${encodeURIComponent(brand.slug)}`;
         window.open(url, '_blank');
         break;
     }
@@ -137,6 +138,11 @@ export default function WhatWeCarry({ location }) {
               {/* In-Store Pickup Option */}
               <button onClick={() => handleFulfillmentOption('pickup')} style={{ padding: '16px', border: '2px solid #E5E5E5', borderRadius: '6px', background: '#FFF', cursor: 'pointer', fontSize: '16px', fontWeight: '600', color: '#1A1A1A', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.background = '#FFF8F6'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.background = '#FFF'; }}>
                 🏪 In-Store Pickup (Reserve Now)
+              </button>
+
+              {/* Just Browsing Option */}
+              <button onClick={() => handleFulfillmentOption('browse')} style={{ padding: '16px', border: '2px solid #E5E5E5', borderRadius: '6px', background: '#FFF', cursor: 'pointer', fontSize: '16px', fontWeight: '600', color: '#1A1A1A', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.background = '#FFF8F6'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.background = '#FFF'; }}>
+                Just browsing — view this store's products
               </button>
             </div>
 
