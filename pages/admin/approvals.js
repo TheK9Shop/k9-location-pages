@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import styles from '../../styles/Approvals.module.css'
 
 export default function Approvals() {
+  const [supabase, setSupabase] = useState(null)
   const [edits, setEdits] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedEdit, setSelectedEdit] = useState(null)
   const [approvalComment, setApprovalComment] = useState('')
 
   useEffect(() => {
-    loadPendingEdits()
+    // Lazy load Supabase only on client
+    import('@/lib/supabase').then(({ supabase: sb }) => {
+      setSupabase(sb)
+      loadPendingEdits(sb)
+    })
   }, [])
 
-  const loadPendingEdits = async () => {
-    const { data, error } = await supabase
+  const loadPendingEdits = async (sb) => {
+    const { data, error } = await sb
       .from('location_edits')
       .select('*')
       .eq('status', 'pending_approval')
@@ -37,7 +41,7 @@ export default function Approvals() {
 
     if (!error) {
       setSelectedEdit(null)
-      loadPendingEdits()
+      loadPendingEdits(supabase)
       alert('Approved!')
     }
   }
@@ -55,7 +59,7 @@ export default function Approvals() {
     if (!error) {
       setSelectedEdit(null)
       setApprovalComment('')
-      loadPendingEdits()
+      loadPendingEdits(supabase)
       alert('Rejected!')
     }
   }
