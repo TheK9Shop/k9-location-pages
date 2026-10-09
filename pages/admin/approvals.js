@@ -1,23 +1,21 @@
 import { useEffect, useState } from 'react'
+import { renderEditValue } from '@/lib/renderEditValue'
 import styles from '../../styles/Approvals.module.css'
 
 export default function Approvals() {
-  const [supabase, setSupabase] = useState(null)
   const [edits, setEdits] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedEdit, setSelectedEdit] = useState(null)
   const [approvalComment, setApprovalComment] = useState('')
 
   useEffect(() => {
-    // Lazy load Supabase only on client
-    import('@/lib/supabase').then(({ supabase: sb }) => {
-      setSupabase(sb)
-      loadPendingEdits(sb)
-    })
+    loadPendingEdits()
   }, [])
 
-  const loadPendingEdits = async (sb) => {
-    const { data, error } = await sb
+  const loadPendingEdits = async () => {
+    const { supabase } = await import('@/lib/supabase')
+    
+    const { data, error } = await supabase
       .from('location_edits')
       .select('*')
       .eq('status', 'pending_approval')
@@ -30,6 +28,8 @@ export default function Approvals() {
   }
 
   const handleApprove = async (editId) => {
+    const { supabase } = await import('@/lib/supabase')
+    
     const { error } = await supabase
       .from('location_edits')
       .update({
@@ -41,12 +41,14 @@ export default function Approvals() {
 
     if (!error) {
       setSelectedEdit(null)
-      loadPendingEdits(supabase)
+      loadPendingEdits()
       alert('Approved!')
     }
   }
 
   const handleReject = async (editId, reason) => {
+    const { supabase } = await import('@/lib/supabase')
+    
     const { error } = await supabase
       .from('location_edits')
       .update({
@@ -59,7 +61,7 @@ export default function Approvals() {
     if (!error) {
       setSelectedEdit(null)
       setApprovalComment('')
-      loadPendingEdits(supabase)
+      loadPendingEdits()
       alert('Rejected!')
     }
   }
@@ -79,41 +81,48 @@ export default function Approvals() {
         </div>
       ) : (
         <div className={styles.list}>
-          {edits.map((edit) => (
-            <div key={edit.id} className={styles.card}>
-              <div className={styles.cardHeader}>
-                <h3>{edit.location_slug}</h3>
-                <span className={styles.field}>{edit.field_name}</span>
-              </div>
-
-              <div className={styles.cardContent}>
-                <div className={styles.submission}>
-                  <p><strong>Submitted by:</strong> {edit.submitted_by}</p>
-                  <p><strong>At:</strong> {new Date(edit.submitted_at).toLocaleString()}</p>
+          {edits.map((edit) => {
+            const rendered = renderEditValue(edit.field_name, edit.new_value)
+            return (
+              <div key={edit.id} className={styles.card}>
+                <div className={styles.cardHeader}>
+                  <h3>{edit.location_slug}</h3>
+                  <span className={styles.field}>{edit.field_name}</span>
                 </div>
 
-                <div className={styles.changePreview}>
-                  <p><strong>New Value:</strong></p>
-                  <pre>{JSON.stringify(JSON.parse(edit.new_value), null, 2)}</pre>
+                <div className={styles.cardContent}>
+                  <div className={styles.submission}>
+                    <p><strong>Submitted by:</strong> {edit.submitted_by}</p>
+                    <p><strong>At:</strong> {new Date(edit.submitted_at).toLocaleString()}</p>
+                  </div>
+
+                  <div className={styles.changePreview}>
+                    <p><strong>New Value:</strong></p>
+                    {rendered.isHtml ? (
+                      <div dangerouslySetInnerHTML={{ __html: rendered.html }} />
+                    ) : (
+                      <p>{rendered.text}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className={styles.actions}>
+                  <button 
+                    className={styles.approve}
+                    onClick={() => handleApprove(edit.id)}
+                  >
+                    ✓ Approve
+                  </button>
+                  <button 
+                    className={styles.reject}
+                    onClick={() => setSelectedEdit(edit)}
+                  >
+                    ✗ Reject
+                  </button>
                 </div>
               </div>
-
-              <div className={styles.actions}>
-                <button 
-                  className={styles.approve}
-                  onClick={() => handleApprove(edit.id)}
-                >
-                  ✓ Approve
-                </button>
-                <button 
-                  className={styles.reject}
-                  onClick={() => setSelectedEdit(edit)}
-                >
-                  ✗ Reject
-                </button>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       )}
 
