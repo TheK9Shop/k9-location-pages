@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { supabase } from '@/lib/supabase'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -15,6 +14,9 @@ export default function Login() {
     setLoading(true)
 
     try {
+      // Lazy load Supabase only when needed
+      const { supabase } = await import('@/lib/supabase')
+
       // Query Supabase for the account
       const { data, error: queryError } = await supabase
         .from('franchisee_accounts')
@@ -22,17 +24,17 @@ export default function Login() {
         .eq('email', email)
         .single()
 
-      console.log('Query result:', data, queryError) // DEBUG
+      console.log('Query result:', data, queryError)
 
       if (queryError || !data) {
-        console.log('Account not found') // DEBUG
+        console.log('Account not found')
         setError('Login Failed. Please Try Again')
         setLoading(false)
         return
       }
 
       if (!data.active) {
-        console.log('Account inactive') // DEBUG
+        console.log('Account inactive')
         setError('Account is inactive')
         setLoading(false)
         return
@@ -40,7 +42,7 @@ export default function Login() {
 
       // Compare passwords (basic - should be bcrypt in production)
       if (data.password_hash !== password) {
-        console.log('Password mismatch') // DEBUG
+        console.log('Password mismatch')
         setError('Login Failed. Please Try Again')
         setLoading(false)
         return
@@ -58,7 +60,7 @@ export default function Login() {
           expires_at: expiresAt,
         })
 
-      console.log('Session insert result:', insertError) // DEBUG
+      console.log('Session insert result:', insertError)
 
       if (insertError) {
         setError('Failed to create session')
@@ -69,7 +71,7 @@ export default function Login() {
       localStorage.setItem('session_token', token)
       router.push(`/franchisee/dashboard/${data.location_slug}`)
     } catch (err) {
-      console.error('Login error:', err) // DEBUG
+      console.error('Login error:', err)
       setError('Login Failed. Please Try Again')
       setLoading(false)
     }
