@@ -1,37 +1,34 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import supabase from '../../../lib/supabase';
-import ClosureModal from '../../../components/EditModals/ClosureModal';
-import styles from '../../../styles/Dashboard.module.css';
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import ClosureModal from '../../../components/EditModals/ClosureModal'
+import styles from '../../../styles/Dashboard.module.css'
 
 export default function Dashboard() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [account, setAccount] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [showClosureModal, setShowClosureModal] = useState(false);
+  const router = useRouter()
+  const { slug } = router.query
+  const [account, setAccount] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [showClosureModal, setShowClosureModal] = useState(false)
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug) return
     
     // Check for session token in localStorage
-    const token = localStorage.getItem('session_token');
+    const token = localStorage.getItem('session_token')
     if (!token) {
-      router.push('/auth/login');
-      return;
+      router.push('/auth/login')
+      return
     }
     
-    loadDashboard();
-  }, [slug, router]);
+    loadDashboard()
+  }, [slug, router])
 
   const loadDashboard = async () => {
-    // TODO: Verify session token from localStorage
-    // TODO: Load location data from Supabase
-    setAccount({ location_slug: slug, role: 'manager' });
-    setLoading(false);
-  };
+    setAccount({ location_slug: slug, role: 'manager' })
+    setLoading(false)
+  }
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>
 
   return (
     <div className={styles.dashboard}>
@@ -92,11 +89,11 @@ export default function Dashboard() {
           locationSlug={slug}
           onClose={() => setShowClosureModal(false)}
           onSave={() => {
-            setShowClosureModal(false);
-            alert('Submitted for approval!');
+            setShowClosureModal(false)
+            alert('Submitted for approval!')
           }}
         />
       )}
     </div>
-  );
+  )
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import styles from '../../styles/ClosureModal.module.css'
 
 export default function ClosureModal({ locationSlug, onClose, onSave }) {
@@ -13,6 +12,9 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
     setError('')
 
     try {
+      // Lazy load Supabase only when needed
+      const { supabase } = await import('@/lib/supabase')
+
       const { error: submitError } = await supabase
         .from('location_edits')
         .insert({
