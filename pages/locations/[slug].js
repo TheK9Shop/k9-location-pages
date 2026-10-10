@@ -1,5 +1,6 @@
 import { getLocationBySlug, locations } from '@/data/locations';
 import Navigation from '@/components/Location/Navigation';
+import ClosureBanner from '@/components/Location/ClosureBanner';
 import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
 import InfoBar from '@/components/Location/InfoBar';
@@ -19,6 +20,7 @@ export default function LocationPage({ location }) {
   return (
     <div>
       <Navigation location={location} />
+      <ClosureBanner locationSlug={location.slug} />
       <Hero location={location} />
       <StickyTabs />
       <InfoBar location={location} />
