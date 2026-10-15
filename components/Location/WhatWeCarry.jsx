@@ -1,28 +1,71 @@
 import { useState } from 'react';
 import styles from '@/styles/Location.module.css';
 
+// DoorDash convenience-store links per location (null = no delivery at that store)
+const DOORDASH = {
+  bohemia: 'https://www.doordash.com/convenience/store/23492341/?pickup=false',
+  massapequa: 'https://www.doordash.com/convenience/store/23491028/?pickup=false',
+  lynbrook: 'https://www.doordash.com/convenience/store/23778612/?pickup=false',
+  'east-northport': 'https://www.doordash.com/convenience/store/25014614/?pickup=false',
+  manorville: 'https://www.doordash.com/convenience/store/28839136/?pickup=false',
+  greenville: null,
+  naples: null,
+};
+
+const SHOPIFY_SEARCH = 'https://thek9shop.com/search?q=';
+const CATALOG = 'https://instore-pickup.replit.app/instore/brand';
+
+const SECTIONS = [
+  { key: 'food', title: 'Food' },
+  { key: 'treats', title: 'Treats & Chews' },
+  { key: 'supplements', title: 'Supplements & Wellness' },
+];
+
+const sectionTitleStyle = {
+  fontSize: '1.4rem',
+  fontWeight: 900,
+  textTransform: 'uppercase',
+  letterSpacing: '0.05em',
+  color: '#1A1A1A',
+  margin: '40px 0 28px',
+  paddingBottom: '12px',
+  borderBottom: '2px solid #C0392B',
+  display: 'inline-block',
+};
+
+const brandNameStyle = {
+  textAlign: 'center',
+  fontSize: '0.9rem',
+  fontWeight: 600,
+  color: '#555',
+  margin: '8px 0 0',
+  lineHeight: 1.4,
+};
+
 export default function WhatWeCarry({ location }) {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedBrand, setSelectedBrand] = useState(null);
+  // selected = { brand, category } when a brand card is open
+  const [selected, setSelected] = useState(null);
 
-  // Combine all categories and keep one entry per brand name
-  const allBrands = location?.brands
-    ? [...location.brands.food, ...location.brands.treats, ...location.brands.supplements]
-    : [];
-  const brands = Array.from(new Map(allBrands.map((b) => [b.name, b])).values());
+  if (!location) return null;
 
-  const handleBrandClick = (brand) => {
-    setSelectedBrand(brand);
-    setShowModal(true);
+  const locSlug = location.slug;
+
+  const pickupUrl = (brand, category) => {
+    const u = new URL(CATALOG);
+    u.searchParams.set('location', locSlug);
+    u.searchParams.set('brand', brand.slug);
+    u.searchParams.set('category', category);
+    return u.toString();
   };
 
-  const handleJustBrowsing = () => {
-    setShowModal(false);
-    setSelectedBrand(null);
+  const browseUrl = (brand) => {
+    const u = new URL(CATALOG);
+    u.searchParams.set('location', locSlug);
+    u.searchParams.set('brand', brand.slug);
+    return u.toString();
   };
 
-  // Pickup-only brands get no delivery or shipping options
-  const pickupOnly = !!selectedBrand?.pickupOnly;
+  const closeModal = () => setSelected(null);
 
   return (
     <section id="what-we-carry" className={styles.whatWeCarrySection}>
@@ -32,33 +75,47 @@ export default function WhatWeCarry({ location }) {
           <p>Premium brands for your pet's health</p>
         </div>
 
-        <div className={styles.brandGrid}>
-          {brands.map((brand) => (
-            <div
-              key={brand.id}
-              className={styles.brandCard}
-              onClick={() => handleBrandClick(brand)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className={styles.brandLogo}>
-                <img src={brand.logo} alt={brand.name} />
+        {SECTIONS.map(({ key, title }) => {
+          const items = location.brands?.[key] || [];
+          if (items.length === 0) return null;
+
+          return (
+            <div key={key}>
+              <h3 style={sectionTitleStyle}>{title}</h3>
+              <div className={styles.brandGrid}>
+                {items.map((brand) => (
+                  <div key={`${key}-${brand.id}`}>
+                    <button
+                      type="button"
+                      className={styles.brandCard}
+                      onClick={() => setSelected({ brand, category: key })}
+                      style={{ width: '100%' }}
+                    >
+                      <div className={styles.brandLogo}>
+                        <img src={brand.logo} alt={brand.name} />
+                      </div>
+                    </button>
+                    <p style={brandNameStyle}>{brand.name}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
-      {showModal && selectedBrand && (
+      {selected && (
         <div className={styles.modal}>
-          <div className={styles.overlay} onClick={() => setShowModal(false)} />
-          <div className={styles.modalContent}>
-            <h3>{selectedBrand.name}</h3>
-            <p>How would you like to shop?</p>
+          <div className={styles.overlay} onClick={closeModal} />
+          <div className={styles.modalContent} role="dialog" aria-modal="true">
+            <h3>{selected.brand.name}</h3>
+            <p>{location.name}</p>
+            <p>How would you like to continue?</p>
 
             <div className={styles.modalButtons}>
-              {!pickupOnly && (
+              {!selected.brand.pickupOnly && DOORDASH[locSlug] && (
                 <a
-                  href="https://www.doordash.com/"
+                  href={DOORDASH[locSlug]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.modalButton}
@@ -67,9 +124,9 @@ export default function WhatWeCarry({ location }) {
                 </a>
               )}
 
-              {!pickupOnly && (
+              {!selected.brand.pickupOnly && (
                 <a
-                  href="https://www.shopify.com/"
+                  href={SHOPIFY_SEARCH + encodeURIComponent(selected.brand.name)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.modalButton}
@@ -79,7 +136,7 @@ export default function WhatWeCarry({ location }) {
               )}
 
               <a
-                href="https://reserve.example.com/"
+                href={pickupUrl(selected.brand, selected.category)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.modalButton}
@@ -87,23 +144,18 @@ export default function WhatWeCarry({ location }) {
                 🏪 In-Store Pickup (Reserve Now)
               </a>
 
-              <button
-                onClick={handleJustBrowsing}
+              <a
+                href={browseUrl(selected.brand)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.modalButton}
-                style={{
-                  background: '#f3f4f6',
-                  color: '#666',
-                  border: '1px solid #e5e5e5'
-                }}
+                style={{ background: '#f3f4f6', color: '#666', border: '1px solid #e5e5e5' }}
               >
                 👀 Just browsing — view this store's products
-              </button>
+              </a>
             </div>
 
-            <button
-              onClick={() => setShowModal(false)}
-              className={styles.closeButton}
-            >
+            <button type="button" onClick={closeModal} className={styles.closeButton}>
               Cancel
             </button>
           </div>
