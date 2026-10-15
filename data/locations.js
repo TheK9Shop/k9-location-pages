@@ -41,7 +41,7 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/Bohemia.jpg?v=1685606483',
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
     brands: {
-        food: [
+          food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "allprovide", "name": "AllProvide", "slug": "allprovide", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/AP_LOGO_115E67_GREEN_280x.avif"},
         {"id": "bones-and-co", "name": "Bones & Co", "slug": "bones-and-co", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bc_logo_black_withcircle_TM_1200.webp"},
@@ -108,7 +108,7 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/Bohemia.jpg?v=1685606483',
         {"id": "amber-naturalz", "name": "Amber Naturalz", "slug": "amber-naturalz", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/amber_naturalz.png"},
         {"id": "biostar", "name": "Biostar", "slug": "biostar", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/biostar.avif"},
         {"id": "brilliant", "name": "Brilliant", "slug": "brilliant", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/brilliant.png"},
-        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png"},
+        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png", "pickupOnly": true},
         {"id": "cbd-dog-health", "name": "CBD Dog Health", "slug": "cbd-dog-health", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/c_dog_health.png"},
         {"id": "coco-therapy", "name": "Coco Therapy", "slug": "coco-therapy", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/cocotherapylogo2_500x.webp"},
         {"id": "crude-carnivore", "name": "Crude Carnivore", "slug": "crude-carnivore", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/crude-carnnew_logo_2024_700x.webp"},
@@ -117,7 +117,7 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/Bohemia.jpg?v=1685606483',
         {"id": "gastro-elm", "name": "Gastro Elm", "slug": "gastro-elm", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/gastro_elm.avif"},
         {"id": "green-juju", "name": "Green JuJu", "slug": "green-juju", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/09/Grrrn-JuJu-Logo.webp"},
         {"id": "nexderma", "name": "Nexderma", "slug": "nexderma", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Nexderma.avif"},
-        {"id": "nuleaf", "name": "Nuleaf", "slug": "nuleaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp"},
+        {"id": "nuleaf-naturals", "name": "NuLeaf Naturals", "slug": "nuleaf-naturals", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp", "pickupOnly": true},
         {"id": "pawse", "name": "Pawse", "slug": "pawse", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Pawse.avif"},
         {"id": "pet-eyes", "name": "Pet Eyes", "slug": "pet-eyes", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/peteyez.avif"},
         {"id": "pets-friend", "name": "Pets Friend", "slug": "pets-friend", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/pets_friend.jpg"},
@@ -228,8 +228,8 @@ gallery: [
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-         food: [
+      brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "allprovide", "name": "AllProvide", "slug": "allprovide", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/AP_LOGO_115E67_GREEN_280x.avif"},
         {"id": "bones-and-co", "name": "Bones & Co", "slug": "bones-and-co", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bc_logo_black_withcircle_TM_1200.webp"},
@@ -295,7 +295,7 @@ gallery: [
         {"id": "amber-naturalz", "name": "Amber Naturalz", "slug": "amber-naturalz", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/amber_naturalz.png"},
         {"id": "biostar", "name": "Biostar", "slug": "biostar", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/biostar.avif"},
         {"id": "brilliant", "name": "Brilliant", "slug": "brilliant", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/brilliant.png"},
-        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png"},
+        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png", "pickupOnly": true},
         {"id": "cbd-dog-health", "name": "CBD Dog Health", "slug": "cbd-dog-health", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/c_dog_health.png"},
         {"id": "coco-therapy", "name": "Coco Therapy", "slug": "coco-therapy", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/cocotherapylogo2_500x.webp"},
         {"id": "crude-carnivore", "name": "Crude Carnivore", "slug": "crude-carnivore", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/crude-carnnew_logo_2024_700x.webp"},
@@ -305,7 +305,7 @@ gallery: [
         {"id": "green-juju", "name": "Green JuJu", "slug": "green-juju", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/09/Grrrn-JuJu-Logo.webp"},
         {"id": "kidshell", "name": "KidShell", "slug": "kidshell", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Ikid-shellMG_5981.avif"},
         {"id": "nexderma", "name": "Nexderma", "slug": "nexderma", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Nexderma.avif"},
-        {"id": "nuleaf", "name": "Nuleaf", "slug": "nuleaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp"},
+        {"id": "nuleaf-naturals", "name": "NuLeaf Naturals", "slug": "nuleaf-naturals", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp", "pickupOnly": true},
         {"id": "pawse", "name": "Pawse", "slug": "pawse", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Pawse.avif"},
         {"id": "pet-eyes", "name": "Pet Eyes", "slug": "pet-eyes", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/peteyez.avif"},
         {"id": "solutions-pet-products", "name": "Solutions Pet Products", "slug": "solutions-pet-products", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/solutions.png"},
@@ -314,6 +314,7 @@ gallery: [
         {"id": "wholistic-pet-organics", "name": "Wholistic Pet Organics", "slug": "wholistic-pet-organics", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/wholistic_pet.png"},
       ],
     },
+  
           reviews: [
       {
         id: 1,
@@ -381,8 +382,8 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/Lynbrook.jpg?v=1685612225',
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-         food: [
+     brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "bp-raw", "name": "BP Raw", "slug": "bp-raw", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bp_raw.webp"},
         {"id": "fedwell", "name": "Fedwell", "slug": "fedwell", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/fedwell_rawfoodforall.webp"},
@@ -509,8 +510,8 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/East-northport.jpg?v=1685612721
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-        food: [
+     brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "allprovide", "name": "AllProvide", "slug": "allprovide", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/AP_LOGO_115E67_GREEN_280x.avif"},
         {"id": "answers-pet-food", "name": "Answers Pet Food", "slug": "answers-pet-food", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/answers-logo.png"},
@@ -557,7 +558,7 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/East-northport.jpg?v=1685612721
         {"id": "four-leaf-rover", "name": "Four Leaf Rover", "slug": "four-leaf-rover", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/four-leaf-rover.png"},
         {"id": "gastro-elm", "name": "Gastro Elm", "slug": "gastro-elm", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/gastro_elm.avif"},
         {"id": "nexderma", "name": "Nexderma", "slug": "nexderma", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Nexderma.avif"},
-        {"id": "nuleaf", "name": "Nuleaf", "slug": "nuleaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp"},
+        {"id": "nuleaf-naturals", "name": "NuLeaf Naturals", "slug": "nuleaf-naturals", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp", "pickupOnly": true},
         {"id": "raw-dynamics", "name": "Raw Dynamics", "slug": "raw-dynamics", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/raw_dynamic.png"},
         {"id": "solutions-pet-products", "name": "Solutions Pet Products", "slug": "solutions-pet-products", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/solutions.png"},
         {"id": "tickless", "name": "Tickless", "slug": "tickless", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Tickless-1.png"},
@@ -634,8 +635,8 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/1.jpg?v=1713793158',
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-        food: [
+     brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "bp-raw", "name": "BP Raw", "slug": "bp-raw", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bp_raw.webp"},
         {"id": "dr-harvey-s", "name": "Dr. Harvey's", "slug": "dr-harvey-s", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/dr_harveys.avif"},
@@ -708,7 +709,7 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/1.jpg?v=1713793158',
         {"id": "hampton-hound", "name": "Hampton Hound", "slug": "hampton-hound", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/10/hampton-hound.jpg"},
         {"id": "natural-dog-company", "name": "Natural Dog Company", "slug": "natural-dog-company", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/nat-dog-co.png"},
         {"id": "nexderma", "name": "Nexderma", "slug": "nexderma", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Nexderma.avif"},
-        {"id": "nuleaf", "name": "Nuleaf", "slug": "nuleaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp"},
+        {"id": "nuleaf-naturals", "name": "NuLeaf Naturals", "slug": "nuleaf-naturals", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp", "pickupOnly": true},
         {"id": "pawse", "name": "Pawse", "slug": "pawse", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Pawse.avif"},
         {"id": "pet-eyes", "name": "Pet Eyes", "slug": "pet-eyes", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/peteyez.avif"},
         {"id": "pet-releaf", "name": "Pet Releaf", "slug": "pet-releaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/10/pet-releaf.png", "pickupOnly": true},
@@ -794,8 +795,8 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/1_greenville.jpg?v=1704896499',
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-         food: [
+      brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "andalucia-farm", "name": "Andalucia Farm", "slug": "andalucia-farm", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/10/andalucia-farm.png"},
         {"id": "answers-pet-food", "name": "Answers Pet Food", "slug": "answers-pet-food", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/answers-logo.png"},
@@ -863,12 +864,12 @@ heroImage: 'https://thek9shop.com/cdn/shop/files/1_greenville.jpg?v=1704896499',
         {"id": "answers-pet-food", "name": "Answers Pet Food", "slug": "answers-pet-food", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/answers-logo.png"},
         {"id": "bones-and-co", "name": "Bones & Co", "slug": "bones-and-co", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bc_logo_black_withcircle_TM_1200.webp"},
         {"id": "brilliant", "name": "Brilliant", "slug": "brilliant", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/brilliant.png"},
-        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png"},
+        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png", "pickupOnly": true},
         {"id": "cbd-dog-health", "name": "CBD Dog Health", "slug": "cbd-dog-health", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/c_dog_health.png"},
         {"id": "green-juju", "name": "Green JuJu", "slug": "green-juju", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/09/Grrrn-JuJu-Logo.webp"},
         {"id": "nexderma", "name": "Nexderma", "slug": "nexderma", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Nexderma.avif"},
         {"id": "nuggets", "name": "Nuggets", "slug": "nuggets", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/10/nuggets.jpg"},
-        {"id": "nuleaf", "name": "Nuleaf", "slug": "nuleaf", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp"},
+        {"id": "nuleaf-naturals", "name": "NuLeaf Naturals", "slug": "nuleaf-naturals", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/neuleaf.webp", "pickupOnly": true},
         {"id": "pawse", "name": "Pawse", "slug": "pawse", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/Pawse.avif"},
         {"id": "raw-dynamics", "name": "Raw Dynamics", "slug": "raw-dynamics", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/raw_dynamic.png"},
         {"id": "real-mushrooms", "name": "Real Mushrooms", "slug": "real-mushrooms", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/10/real-mushrooms.jpg"},
@@ -955,8 +956,8 @@ heroImage: 'https://lh3.googleusercontent.com/E0j2zi-I5PT59OJ3ucmR8W4R5mElZ7KUNf
       { id: 5, name: 'Steve\'s Real Food', price: '$13.99', image: '/images/product-5.jpg' },
       { id: 6, name: 'Tucker\'s Variety', price: '$15.99', image: '/images/product-6.jpg' },
     ],
-    brands: {
-        food: [
+     brands: {
+      food: [
         {"id": "albrights", "name": "Albrights", "slug": "albrights", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/albrights-1.avif"},
         {"id": "allprovide", "name": "AllProvide", "slug": "allprovide", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/AP_LOGO_115E67_GREEN_280x.avif"},
         {"id": "bones-and-co", "name": "Bones & Co", "slug": "bones-and-co", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bc_logo_black_withcircle_TM_1200.webp"},
@@ -1011,7 +1012,7 @@ heroImage: 'https://lh3.googleusercontent.com/E0j2zi-I5PT59OJ3ucmR8W4R5mElZ7KUNf
         {"id": "adored-beast", "name": "Adored Beast", "slug": "adored-beast", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/adored_beast.avif"},
         {"id": "bones-and-co", "name": "Bones & Co", "slug": "bones-and-co", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bc_logo_black_withcircle_TM_1200.webp"},
         {"id": "brilliant", "name": "Brilliant", "slug": "brilliant", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/brilliant.png"},
-        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png"},
+        {"id": "bully-crew", "name": "Bully Crew", "slug": "bully-crew", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/bully_crew.png", "pickupOnly": true},
         {"id": "cbd-dog-health", "name": "CBD Dog Health", "slug": "cbd-dog-health", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/c_dog_health.png"},
         {"id": "crude-carnivore", "name": "Crude Carnivore", "slug": "crude-carnivore", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/crude-carnnew_logo_2024_700x.webp"},
         {"id": "earth-animal", "name": "Earth Animal", "slug": "earth-animal", "logo": "https://robertt181.sg-host.com/wp-content/uploads/2026/08/EA_LOGO_ELLIPSE_BROWN_CMYK.webp"},
