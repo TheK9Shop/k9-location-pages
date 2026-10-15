@@ -272,3 +272,185 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* What We Carry - Brand Grid */
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.brandCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 120px;
+}
+
+.brandCard:hover {
+  border-color: #C0392B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.brandLogo {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1A1A1A;
+}
+
+/* What We Carry - Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  z-index: 1001;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1A1A1A;
+  margin: 0 0 8px 0;
+}
+
+.modalContent p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.modalButtons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.modalButton {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+}
+
+.modalButton:hover {
+  border-color: #C0392B;
+  background: #FFF8F6;
+  color: #1A1A1A;
+}
+
+.closeButton {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #f3f4f6;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .brandGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  .modalContent {
+    padding: 24px;
+  }
+
+  .modalContent h3 {
+    font-size: 20px;
+  }
+}
+/* What We Carry — section wrapper */
+.whatWeCarrySection {
+  padding: 80px 40px;
+  background: white;
+  margin: 60px 0;
+}
+
+.whatWeCarryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.whatWeCarryHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.whatWeCarryHeader h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.whatWeCarryHeader p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .whatWeCarrySection {
+    padding: 60px 20px;
+  }
+
+  .whatWeCarryHeader h2 {
+    font-size: 24px;
+  }
+}
