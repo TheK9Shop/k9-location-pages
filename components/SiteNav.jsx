@@ -36,7 +36,7 @@ export default function SiteNav() {
           ))}
         </div>
         <a
-          href="https://shop.thek9shop.com"
+          href="https://thek9shop.com/"
           style={{
             background: '#C0392B', color: '#FFFFFF', padding: '10px 22px',
             fontSize: 12, fontWeight: 900, letterSpacing: '0.1em',
