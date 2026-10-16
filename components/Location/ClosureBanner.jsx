@@ -24,11 +24,12 @@ export default function ClosureBanner({ locationSlug }) {
 
       if (!error && data && data.length > 0) {
         try {
-          // Handle double-escaped JSON
-          let closureData = JSON.parse(data[0].new_value)
-          if (typeof closureData === 'string') {
-            closureData = JSON.parse(closureData)
-          }
+  // new_value may come back as an object (jsonb) or as a string
+  const raw = data[0].new_value
+  let closureData = typeof raw === 'string' ? JSON.parse(raw) : raw
+  if (typeof closureData === 'string') {
+    closureData = JSON.parse(closureData)
+  }
           
           // Check if store is closed (is_open = false)
           if (closureData.is_open === false) {
