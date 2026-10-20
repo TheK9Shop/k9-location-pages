@@ -8,45 +8,48 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
   const [error, setError] = useState('')
 
   const handleSave = async () => {
-    setLoading(true)
-    setError('')
+  setLoading(true)
+  setError('')
 
-    try {
-      // Lazy load Supabase only when needed
-      const { supabase } = await import('@/lib/supabase')
+  try {
+    const { supabase } = await import('@/lib/supabase')
 
-      const { error: submitError } = await supabase
-        .from('location_edits')
-        .insert({
-          location_slug: locationSlug,
-          field_name: 'closure_banner',
-          edit_type: 'update',
-          old_value: null,
-          new_value: JSON.stringify({
-            is_open: !isOpen,
-            message: message,
-          }),
-          status: 'pending_approval',
-          submitted_by: 'test-user',
-          submitted_at: new Date().toISOString(),
-        })
+    const { data: inserted, error: submitError } = await supabase
+      .from('location_edits')
+      .insert({
+        location_slug: locationSlug,
+        field_name: 'closure_banner',
+        edit_type: 'update',
+        old_value: null,
+        new_value: JSON.stringify({ is_open: !isOpen, message: message }),
+        status: 'pending_approval',
+        submitted_by: 'test-user',
+        submitted_at: new Date().toISOString(),
+      })
+      .select('id')
+      .single()
 
-      console.log('Supabase error:', submitError)
-
-      if (submitError) {
-        console.error('Full error:', submitError)
-        setError('Failed to submit. Please try again.')
-        setLoading(false)
-        return
-      }
-
-      onSave()
-    } catch (err) {
-      console.error('Error submitting changes:', err)
-      setError('Error submitting changes')
+    if (submitError) {
+      console.error('Full error:', submitError)
+      setError('Failed to submit. Please try again.')
       setLoading(false)
+      return
     }
+
+    // Text the approvers. A failed text should not block the save.
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ editId: inserted.id }),
+    }).catch((err) => console.error('Notify failed', err))
+
+    onSave()
+  } catch (err) {
+    console.error('Error submitting changes:', err)
+    setError('Error submitting changes')
+    setLoading(false)
   }
+}
 
   return (
     <div className={styles.modal}>
