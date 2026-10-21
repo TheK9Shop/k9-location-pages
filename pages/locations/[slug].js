@@ -12,6 +12,7 @@ import ShopByCategory from '@/components/Location/ShopByCategory';
 import Gallery from '@/components/Location/Gallery';
 import Reviews from '@/components/Location/Reviews';
 import Events from '@/components/Location/Events';
+import ExpertSection from '@/components/Location/ExpertSection';
 
 // Section order for every store, except the ones listed below
 const DEFAULT_ORDER = ['about', 'products', 'what-we-carry', 'shop-by-category', 'gallery', 'reviews'];
@@ -69,6 +70,7 @@ export default function LocationPage({ location }) {
       <Hero location={location} />
       <StickyTabs tabs={tabs} />
       <InfoBar location={location} />
+            <ExpertSection location={location} />
 
       {order.map((id) => renderSection(id))}
 
