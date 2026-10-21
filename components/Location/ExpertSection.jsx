@@ -23,9 +23,7 @@ export default function ExpertSection({ location }) {
           <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 900, color: '#1A1A1A', margin: '0 0 16px 0' }}>
             Book a Nutrition Consultation
           </h2>
-                {expert.bio && (
-        <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: '0 0 20px 0' }}>{expert.bio}</p>
-      )}
+          <p style={{ fontSize: 16, color: '#555', margin: 0 }}>
             Talk one-on-one with our team about your dog's diet.
           </p>
         </div>
