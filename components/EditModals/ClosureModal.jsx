@@ -65,7 +65,7 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
               onChange={(e) => setIsOpen(e.target.checked)}
               disabled={loading}
             />
-            {' '}Store is currently closed
+            {' '}Check Box For Closures. Leave Unchecked & Submitto Re-Open. (This will display a banner on the store page indicating the store is closed.)
           </label>
         </div>
 
