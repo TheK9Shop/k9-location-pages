@@ -65,7 +65,7 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
               onChange={(e) => setIsOpen(e.target.checked)}
               disabled={loading}
             />
-            {' '}Check Box For Closures. Leave Unchecked & Submitto Re-Open. (This will display a banner on the store page indicating the store is closed.)
+            {' '}Check Box & Submit For Closures. Leave Unchecked & Submit to Re-Open. (This will display a banner on the store page)
           </label>
         </div>
 
