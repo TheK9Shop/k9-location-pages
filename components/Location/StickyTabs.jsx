@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function StickyTabs({ activeTab = 'about', onTabChange }) {
-  const tabs = [
-    { id: 'about', label: 'About' },
-    { id: 'events', label: 'Events' },
-    { id: 'products', label: 'Products' },
-    { id: 'gallery', label: 'Gallery' },
-  ];
+// Site nav (68px) plus this tab bar (about 52px), with room to spare
+const OFFSET = 130;
+
+export default function StickyTabs({ tabs }) {
+  const [activeId, setActiveId] = useState(tabs[0]?.target);
+
+  useEffect(() => {
+    const onScroll = () => {
+      let current = tabs[0]?.target;
+      tabs.forEach((tab) => {
+        const el = document.getElementById(tab.target);
+        if (el && el.getBoundingClientRect().top <= OFFSET + 20) current = tab.target;
+      });
+      setActiveId(current);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [tabs]);
+
+  const goTo = (target) => {
+    const el = document.getElementById(target);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
 
   const outerStyle = {
     background: '#FFF',
@@ -25,6 +44,8 @@ export default function StickyTabs({ activeTab = 'about', onTabChange }) {
     display: 'flex',
     gap: 0,
     width: '100%',
+    overflowX: 'auto',
+    whiteSpace: 'nowrap',
   };
 
   const buttonStyle = {
@@ -38,26 +59,28 @@ export default function StickyTabs({ activeTab = 'about', onTabChange }) {
     cursor: 'pointer',
     transition: 'color 0.18s',
     fontFamily: 'inherit',
+    flexShrink: 0,
   };
 
   return (
     <div style={outerStyle}>
       <div style={containerStyle}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => onTabChange && onTabChange(tab.id)}
-            style={{
-              ...buttonStyle,
-              color: activeTab === tab.id ? '#C0392B' : '#888',
-              borderBottom: activeTab === tab.id ? '2px solid #C0392B' : '2px solid transparent',
-            }}
-            onMouseEnter={(e) => { if (activeTab !== tab.id) e.target.style.color = '#C0392B'; }}
-            onMouseLeave={(e) => { if (activeTab !== tab.id) e.target.style.color = '#888'; }}
-          >
-            {tab.label}
-          </button>
-        ))}
+        {tabs.map((tab) => {
+          const active = activeId === tab.target;
+          return (
+            <button
+              key={tab.target}
+              onClick={() => goTo(tab.target)}
+              style={{
+                ...buttonStyle,
+                color: active ? '#C0392B' : '#888',
+                borderBottom: active ? '2px solid #C0392B' : '2px solid transparent',
+              }}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

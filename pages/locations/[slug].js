@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { getLocationBySlug, locations } from '@/data/locations';
 import SiteNav from '@/components/SiteNav';
 import ClosureBanner from '@/components/Location/ClosureBanner';
@@ -12,40 +13,66 @@ import Gallery from '@/components/Location/Gallery';
 import Reviews from '@/components/Location/Reviews';
 import Events from '@/components/Location/Events';
 
+// Section order for every store, except the ones listed below
+const DEFAULT_ORDER = ['about', 'products', 'what-we-carry', 'shop-by-category', 'gallery', 'reviews'];
+
+// Stores that show Shop by Category first
+const ORDER_BY_STORE = {
+  bohemia: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
+  massapequa: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
+};
+
+const TAB_LABELS = {
+  about: 'About',
+  products: 'Featured Products',
+  'what-we-carry': 'What We Carry',
+  'shop-by-category': 'Shop by Category',
+  gallery: 'Gallery',
+  reviews: 'Reviews',
+};
+
 export default function LocationPage({ location }) {
   if (!location) {
     return <div>Location not found</div>;
   }
+
+  const order = ORDER_BY_STORE[location.slug] || DEFAULT_ORDER;
+
+  const tabs = useMemo(
+    () => order.map((id) => ({ target: id, label: TAB_LABELS[id] })),
+    [location.slug]
+  );
+
+  const renderSection = (id) => {
+    switch (id) {
+      case 'about':
+        return <div id="about" key={id}><About location={location} /></div>;
+      case 'products':
+        return <FeaturedProducts key={id} location={location} />;
+      case 'what-we-carry':
+        return <WhatWeCarry key={id} location={location} />;
+      case 'shop-by-category':
+        return <ShopByCategory key={id} location={location} />;
+      case 'gallery':
+        return <Gallery key={id} location={location} />;
+      case 'reviews':
+        return <Reviews key={id} location={location} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div>
       <SiteNav />
       <ClosureBanner locationSlug={location.slug} />
       <Hero location={location} />
-      <StickyTabs />
+      <StickyTabs tabs={tabs} />
       <InfoBar location={location} />
-      
-      {/* About Section */}
-      <div id="about">
-        <About location={location} />
-      </div>
 
-      {/* Featured Products Section */}
-      <FeaturedProducts location={location} />
+      {order.map((id) => renderSection(id))}
 
-      {/* What We Carry Section */}
-      <WhatWeCarry location={location} />
-
-      {/* Shop by Category Section */}
-      <ShopByCategory location={location} />
-
-      {/* Gallery Section */}
-      <Gallery location={location} />
-
-      {/* Reviews Section */}
-      <Reviews location={location} />
-
-      {/* Events Section */}
+      {/* Events stays on the page but has no menu tab */}
       <div id="events">
         <Events location={location} />
       </div>
@@ -55,7 +82,7 @@ export default function LocationPage({ location }) {
 
 export async function getStaticProps({ params }) {
   const location = getLocationBySlug(params.slug);
-  
+
   if (!location) {
     return { notFound: true };
   }
