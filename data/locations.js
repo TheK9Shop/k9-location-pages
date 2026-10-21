@@ -17,7 +17,7 @@ story: 'The K9 Shop is the brainchild of Anya and Robert Tucker, who saw a need 
 vision: 'To be the first and most trusted choice for pet-parents in their search for healthy, raw feeding options.',
 coreValues: ['Passionate about healthy pet diets', 'Integrity with every product we sell', 'Quality over quantity'],    
 team: [
-  { name: 'Elana', role: 'Store Manager', image: '/images/elana.jpg', bio: 'Passionate about helping pets thrive with premium nutrition. With years of expertise in raw feeding, Elana guides customers to the perfect diet for their furry friends.' },
+      { name: 'Elana Gold', role: 'Store Manager', image: '', bio: 'Passionate about helping pets thrive with premium nutrition. With years of expertise in raw feeding, Elana guides customers to the perfect diet for their furry friends.' },
   { name: 'Sue', role: 'Nutrition Expert', image: '/images/sue.jpg', bio: 'Dedicated to pet wellness and educated customer service. Sue specializes in helping pets with dietary sensitivities find the right balance.' },
   { name: 'Bonnie', role: 'Nutrition Expert', image: '/images/bonnie.jpg', bio: 'Expert in breed-specific nutrition and raw food transitions. Bonnie is committed to your pet\'s optimal health and longevity.' },
   { name: 'Natalia', role: 'Nutrition Expert', image: '/images/natalia.jpg', bio: 'Knowledgeable and caring team member who loves learning about different raw food options. Natalia helps match pets with quality products.' },
