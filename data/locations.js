@@ -217,7 +217,7 @@ gallery: [
   'https://lh3.googleusercontent.com/jnc4VtufVM2lx1dZ5WwHXgkOnb6UnuK3sVqkdYzX6-UM1GRvR6gvERuizRXWlIOfSn3N4XSiytkCJjvmKA=w1368',
   'https://lh3.googleusercontent.com/3vQkO9Mdx_0zM2vegNlhAgipuDGGU6p53a3YH7hvqTkDvcIBSyz-_GDCD1XDPH2IfckeXrm-zEpjMkvupA=w1368',
   'https://lh3.googleusercontent.com/3kYdX70nDX4aW4dUSLuw7LzP2yz5xLskbL83qdwuFmO1UNd0N1BJzkqHSP6DSFyQQQfaclvqGzx-SqiPgg=w1368',
-  'https://scontent-lga3-3.xx.fbcdn.net/v/t39.30808-6/659842602_1547923787342028_3515508717740976430_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=3KmKawp0MQIQ7kNvwH_YjpR&_nc_oc=AdrjhDgJNkwuieptrL3mcY0eIGCqj9WxdxLcHLF70FZGGdHg2f7LnqHcAxoTz4g3rsAzhdxfRzR6eZcxGZKZuOx4&_nc_zt=23&_nc_ht=scontent-lga3-3.xx&_nc_gid=bc9h226q0D3AOqzVk8fv6g&_nc_ss=7b289&oh=00_AQNRSI6NaFiBmV7yrHr_eNJtyBkUHRFDCIEZY1RKDwwEsA&oe=6ACB45A8',
+  'https://robertt181.sg-host.com/wp-content/uploads/2026/10/Rob-And-Frankie-at-Massapequa.png',
    ],
    heroImage: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkiWPNHj7dZxeYhtyaryObAFqzmyN-5qeSwEp1HSLYut-uux4ToZ1AcwR4Mnfnpsif266-N9Htvr2grbNhRxkiuFiSaUPkAOGpng8XOj1HuOoIF38pkOglU_qWDF9kco1kurpGA1A=s1360-w1360-h1020-rw',
     featuredProducts: [
