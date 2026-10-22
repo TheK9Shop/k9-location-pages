@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { getLocationBySlug, locations } from '@/data/locations';
 import SiteNav from '@/components/SiteNav';
 import ClosureBanner from '@/components/Location/ClosureBanner';
@@ -6,18 +6,19 @@ import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
 import InfoBar from '@/components/Location/InfoBar';
 import About from '@/components/Location/About';
+import ExpertSection from '@/components/Location/ExpertSection';
 import FeaturedProducts from '@/components/Location/FeaturedProducts';
 import WhatWeCarry from '@/components/Location/WhatWeCarry';
 import ShopByCategory from '@/components/Location/ShopByCategory';
 import Gallery from '@/components/Location/Gallery';
 import Reviews from '@/components/Location/Reviews';
 import Events from '@/components/Location/Events';
-import ExpertSection from '@/components/Location/ExpertSection';
 
 // Section order for every store, except the ones listed below
 const DEFAULT_ORDER = ['about', 'products', 'what-we-carry', 'shop-by-category', 'gallery', 'reviews'];
 
-// Stores that show Shop by Category first
+// Bohemia and Massapequa: Shop by Category first.
+// The Expert section sits right after About (rendered inside the 'about' case).
 const ORDER_BY_STORE = {
   bohemia: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
   massapequa: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
@@ -39,15 +40,21 @@ export default function LocationPage({ location }) {
 
   const order = ORDER_BY_STORE[location.slug] || DEFAULT_ORDER;
 
+  // Only sections with a menu label get a tab
   const tabs = useMemo(
-    () => order.map((id) => ({ target: id, label: TAB_LABELS[id] })),
+    () => order.filter((id) => TAB_LABELS[id]).map((id) => ({ target: id, label: TAB_LABELS[id] })),
     [location.slug]
   );
 
   const renderSection = (id) => {
     switch (id) {
       case 'about':
-        return <div id="about" key={id}><About location={location} /></div>;
+        return (
+          <Fragment key={id}>
+            <div id="about"><About location={location} /></div>
+            <ExpertSection location={location} />
+          </Fragment>
+        );
       case 'products':
         return <FeaturedProducts key={id} location={location} />;
       case 'what-we-carry':
@@ -70,7 +77,6 @@ export default function LocationPage({ location }) {
       <Hero location={location} />
       <StickyTabs tabs={tabs} />
       <InfoBar location={location} />
-            <ExpertSection location={location} />
 
       {order.map((id) => renderSection(id))}
 

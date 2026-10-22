@@ -22,7 +22,7 @@ export default function About({ location }) {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', marginBottom: '60px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', marginBottom: '60px' }}>
           <div>
             <div style={{ marginBottom: '40px' }}>
               <div style={{ fontSize: '14px', fontWeight: '900', color: '#C0392B', textTransform: 'uppercase', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -68,7 +68,7 @@ export default function About({ location }) {
 
           <div>
             <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1A1A1A', marginBottom: '32px' }}>Our Team</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
               {team && team.length > 0 ? (
                 team.map((member) => (
                   <div key={member.id} style={{ background: '#FFF', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)', transition: 'transform 150ms, box-shadow 150ms' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 16px rgba(0, 0, 0, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)'; }}>
