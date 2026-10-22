@@ -13,6 +13,7 @@ import ShopByCategory from '@/components/Location/ShopByCategory';
 import Gallery from '@/components/Location/Gallery';
 import Reviews from '@/components/Location/Reviews';
 import Events from '@/components/Location/Events';
+import SiteFooter from '@/components/SiteFooter';
 
 // Section order for every store, except the ones listed below
 const DEFAULT_ORDER = ['about', 'products', 'what-we-carry', 'shop-by-category', 'gallery', 'reviews'];
@@ -84,6 +85,8 @@ export default function LocationPage({ location }) {
       <div id="events">
         <Events location={location} />
       </div>
+
+      <SiteFooter />
     </div>
   );
 }
