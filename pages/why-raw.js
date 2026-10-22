@@ -91,14 +91,23 @@ export default function WhyRaw() {
       </Block>
 
       <Block alt>
-        <Img src={IMG_SKIN_COAT} alt="Skin and coat improvements on a raw diet" />
-        <Label>The Improvements</Label>
+                <Label>The Improvements</Label>
         <H2>What Raw Feeding Can Improve</H2>
-
-        <H3>Skin and Coat</H3>
-        <P>
-          Many raw-fed owners notice healthier skin and a shinier coat as the diet improves how their dog digests and absorbs nutrients.
-        </P>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
+          <div style={{ flex: '1 1 320px' }}>
+            <H3>Skin and Coat</H3>
+            <P>
+              Many raw-fed owners notice healthier skin and a shinier coat as the diet improves how their dog digests and absorbs nutrients.
+            </P>
+          </div>
+          <div style={{ flex: '0 1 50%', minWidth: 260 }}>
+            <img
+              src={IMG_SKIN_COAT}
+              alt="Skin and coat improvements on a raw diet"
+              style={{ width: '100%', height: 'auto', borderRadius: 8, display: 'block' }}
+            />
+          </div>
+        </div>
 
         <H3>Energy and Vitality</H3>
         <P>
