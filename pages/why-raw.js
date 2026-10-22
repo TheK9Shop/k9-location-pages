@@ -5,6 +5,16 @@ import SiteFooter from '@/components/SiteFooter';
 const IMG_WHAT_DOGS_EAT = 'https://robertt181.sg-host.com/wp-content/uploads/2026/10/raw-pet-food-What-should-dogs-be-eating.webp';
 const IMG_SKIN_COAT = 'https://robertt181.sg-host.com/wp-content/uploads/2026/10/Skin-and-coat-improvements-new.webp';
 
+const floatImage = {
+  float: 'right',
+  width: '35%',
+  maxWidth: 300,
+  minWidth: 160,
+  height: 'auto',
+  borderRadius: 8,
+  margin: '0 0 16px 28px',
+};
+
 const Label = ({ children }) => (
   <div style={{ fontSize: 12, fontWeight: 900, letterSpacing: '0.2em', color: '#C0392B', textTransform: 'uppercase', marginBottom: 12 }}>
     {children}
@@ -48,11 +58,7 @@ export default function WhyRaw() {
         <Label>Why Raw?</Label>
         <H2>Why Raw Pet Food?</H2>
         <div>
-          <img
-            src={IMG_WHAT_DOGS_EAT}
-            alt="A raw meal for a dog"
-            style={{ float: 'right', width: '35%', maxWidth: 300, minWidth: 160, height: 'auto', borderRadius: 8, margin: '0 0 16px 28px' }}
-          />
+          <img src={IMG_WHAT_DOGS_EAT} alt="A raw meal for a dog" style={floatImage} />
           <P>
             Raw dog food is species appropriate and provides numerous health benefits. Dogs are carnivores, so they should eat a diet of predominantly meat.
           </P>
@@ -99,20 +105,12 @@ export default function WhyRaw() {
         <Label>The Improvements</Label>
         <H2>What Raw Feeding Can Improve</H2>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
-          <div style={{ flex: '1 1 320px' }}>
-            <H3>Skin and Coat</H3>
-            <P>
-              Many raw-fed owners notice healthier skin and a shinier coat as the diet improves how their dog digests and absorbs nutrients.
-            </P>
-          </div>
-          <div style={{ flex: '0 1 50%', minWidth: 260 }}>
-            <img
-              src={IMG_SKIN_COAT}
-              alt="Skin and coat improvements on a raw diet"
-              style={{ width: '100%', height: 'auto', borderRadius: 8, display: 'block' }}
-            />
-          </div>
+        <div>
+          <img src={IMG_SKIN_COAT} alt="Skin and coat improvements on a raw diet" style={floatImage} />
+          <H3>Skin and Coat</H3>
+          <P>
+            Many raw-fed owners notice healthier skin and a shinier coat as the diet improves how their dog digests and absorbs nutrients.
+          </P>
         </div>
 
         <H3>Energy and Vitality</H3>
