@@ -31,10 +31,6 @@ const Block = ({ children, alt }) => (
   </section>
 );
 
-const Img = ({ src, alt }) => (
-  <img src={src} alt={alt} style={{ width: '100%', height: 'auto', borderRadius: 8, display: 'block', marginBottom: 32 }} />
-);
-
 export default function WhyRaw() {
   return (
     <>
@@ -51,17 +47,26 @@ export default function WhyRaw() {
       <Block>
         <Label>Why Raw?</Label>
         <H2>Why Raw Pet Food?</H2>
-        <P>
-          Raw dog food is species appropriate and provides numerous health benefits. Dogs are carnivores, so they should eat a diet of predominantly meat.
-        </P>
+        <div>
+          <img
+            src={IMG_WHAT_DOGS_EAT}
+            alt="A raw meal for a dog"
+            style={{ float: 'right', width: '35%', maxWidth: 300, minWidth: 160, height: 'auto', borderRadius: 8, margin: '0 0 16px 28px' }}
+          />
+          <P>
+            Raw dog food is species appropriate and provides numerous health benefits. Dogs are carnivores, so they should eat a diet of predominantly meat.
+          </P>
+          <P>
+            Equally important, it should be raw. Animals don't cook their foods. Your dog needs raw muscle meat, organs, fatty tissue, and bones.
+          </P>
+        </div>
       </Block>
 
       <Block alt>
-        <Img src={IMG_WHAT_DOGS_EAT} alt="A raw meal for a dog" />
         <Label>The Basics</Label>
         <H2>What Should Dogs Be Eating?</H2>
         <P>
-          Dogs are carnivores. They should eat a diet of predominantly meat. Equally important, it should be raw. Animals don't cook their foods. Your dog needs raw muscle meat, organs, fatty tissue, and bones.
+          Dogs are carnivores. They should eat a diet of predominantly meat, and it should be raw, with muscle meat, organs, fatty tissue, and bones.
         </P>
 
         <H3>What Shouldn't Dogs Be Eating?</H3>
@@ -91,8 +96,9 @@ export default function WhyRaw() {
       </Block>
 
       <Block alt>
-                <Label>The Improvements</Label>
+        <Label>The Improvements</Label>
         <H2>What Raw Feeding Can Improve</H2>
+
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
           <div style={{ flex: '1 1 320px' }}>
             <H3>Skin and Coat</H3>
