@@ -5,6 +5,7 @@ import ClosureBanner from '@/components/Location/ClosureBanner';
 import Hero from '@/components/Location/Hero';
 import StickyTabs from '@/components/Location/StickyTabs';
 import InfoBar from '@/components/Location/InfoBar';
+import ContactBanner from '@/components/Location/ContactBanner';
 import About from '@/components/Location/About';
 import ExpertSection from '@/components/Location/ExpertSection';
 import FeaturedProducts from '@/components/Location/FeaturedProducts';
@@ -78,6 +79,7 @@ export default function LocationPage({ location }) {
       <Hero location={location} />
       <StickyTabs tabs={tabs} />
       <InfoBar location={location} />
+      <ContactBanner location={location} />
 
       {order.map((id) => renderSection(id))}
 
