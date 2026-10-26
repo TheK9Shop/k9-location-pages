@@ -1,8 +1,8 @@
 export default function SiteNav() {
   const links = [
-    { label: 'Why Raw?', href: 'https://k9-location-pages.vercel.app/why-raw' },
+    { label: 'Why Raw?', href: 'https://locations.thek9shop.com/why-raw' },
     { label: 'How to Feed', href: 'https://robertt181.sg-host.com/how-to-feed/' },
-    { label: 'Locations', href: 'https://k9-location-pages.vercel.app/' },
+    { label: 'Locations', href: 'https://locations.thek9shop.com/' },
     { label: 'About Us', href: 'https://robertt181.sg-host.com/about-us/' },
     { label: 'Franchise', href: 'https://robertt181.sg-host.com/franchise/' },
     { label: 'Blog', href: 'https://robertt181.sg-host.com/blog/' },

@@ -28,8 +28,8 @@ export default function SiteFooter({ contactUrl }) {
             <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
               <li style={liStyle}><a href="https://thek9shop.com/" style={linkStyle}>Shop Online</a></li>
               <li style={liStyle}><a href="https://robertt181.sg-host.com/" style={linkStyle}>Home</a></li>
-              <li style={liStyle}><a href="https://k9-location-pages.vercel.app/why-raw" style={linkStyle}>Why Raw?</a></li>
-              <li><a href="https://k9-location-pages.vercel.app/" style={linkStyle}>All Locations</a></li>
+              <li style={liStyle}><a href="https://locations.thek9shop.com/why-raw" style={linkStyle}>Why Raw?</a></li>
+              <li><a href="https://locations.thek9shop.com/" style={linkStyle}>All Locations</a></li>
             </ul>
           </div>
 
