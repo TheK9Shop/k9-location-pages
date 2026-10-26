@@ -88,7 +88,7 @@ export default function LocationPage({ location }) {
         <Events location={location} />
       </div>
 
-      <SiteFooter />
+      <SiteFooter contactUrl={location.contactUrl} />
     </div>
   );
 }

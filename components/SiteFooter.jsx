@@ -1,7 +1,9 @@
-export default function SiteFooter() {
+export default function SiteFooter({ contactUrl }) {
   const linkStyle = { color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: 13 };
   const headStyle = { fontSize: 14, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.1em', margin: '0 0 20px 0', color: '#C0392B' };
   const liStyle = { marginBottom: 12 };
+
+  const contactHref = contactUrl || 'mailto:info@thek9shop.com';
 
   return (
     <footer style={{ width: '100%', background: '#1A1A1A', color: '#FFFFFF', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif', padding: '80px 40px 40px' }}>
@@ -35,7 +37,7 @@ export default function SiteFooter() {
             <h4 style={headStyle}>Support</h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
               <li style={liStyle}><a href="https://robertt181.sg-host.com/franchise/" style={linkStyle}>Franchise Opportunities</a></li>
-              <li><a href="mailto:info@thek9shop.com" style={linkStyle}>Contact Us</a></li>
+              <li><a href={contactHref} style={linkStyle}>Contact Us</a></li>
             </ul>
           </div>
 
