@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import ClosureModal from '../../../components/EditModals/ClosureModal'
+import StaffModal from '../../../components/EditModals/StaffModal'
 import styles from '../../../styles/Dashboard.module.css'
 
 export default function Dashboard() {
@@ -9,24 +10,32 @@ export default function Dashboard() {
   const [account, setAccount] = useState(null)
   const [loading, setLoading] = useState(true)
   const [showClosureModal, setShowClosureModal] = useState(false)
+  const [showStaffModal, setShowStaffModal] = useState(false)
 
-  useEffect(() => {
+    useEffect(() => {
     if (!slug) return
-    
-    // Check for session token in localStorage
+
     const token = localStorage.getItem('session_token')
     if (!token) {
       router.push('/auth/login')
       return
     }
-    
-    loadDashboard()
-  }, [slug, router])
 
-  const loadDashboard = async () => {
-    setAccount({ location_slug: slug, role: 'manager' })
-    setLoading(false)
-  }
+    fetch(`/api/auth/verify?slug=${encodeURIComponent(slug)}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (!data.ok) {
+          localStorage.removeItem('session_token')
+          router.push('/auth/login')
+          return
+        }
+        setAccount({ location_slug: data.location_slug, role: data.role, email: data.email })
+        setLoading(false)
+      })
+      .catch(() => router.push('/auth/login'))
+  }, [slug, router])
 
   if (loading) return <div>Loading...</div>
 
@@ -50,7 +59,7 @@ export default function Dashboard() {
 
         <section className={styles.module}>
           <h2>Staff</h2>
-          <button>Edit</button>
+          <button onClick={() => setShowStaffModal(true)}>Edit</button>
         </section>
 
         <section className={styles.module}>
@@ -90,6 +99,17 @@ export default function Dashboard() {
           onClose={() => setShowClosureModal(false)}
           onSave={() => {
             setShowClosureModal(false)
+            alert('Submitted for approval!')
+          }}
+        />
+      )}
+
+      {showStaffModal && (
+        <StaffModal
+          locationSlug={slug}
+          onClose={() => setShowStaffModal(false)}
+          onSave={() => {
+            setShowStaffModal(false)
             alert('Submitted for approval!')
           }}
         />
