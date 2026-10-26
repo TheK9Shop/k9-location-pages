@@ -8,55 +8,49 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
   const [error, setError] = useState('')
 
   const handleSave = async () => {
-  setLoading(true)
-  setError('')
+    setLoading(true)
+    setError('')
 
-  try {
-    const { supabase } = await import('@/lib/supabase')
-
-    const { data: inserted, error: submitError } = await supabase
-      .from('location_edits')
-      .insert({
-        location_slug: locationSlug,
-        field_name: 'closure_banner',
-        edit_type: 'update',
-        old_value: null,
-        new_value: JSON.stringify({ is_open: !isOpen, message: message }),
-        status: 'pending_approval',
-        submitted_by: 'test-user',
-        submitted_at: new Date().toISOString(),
+    const token = localStorage.getItem('session_token')
+    try {
+      const res = await fetch('/api/edits/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({
+          slug: locationSlug,
+          field_name: 'closure_banner',
+          new_value: { is_open: !isOpen, message },
+        }),
       })
-      .select('id')
-      .single()
+      const data = await res.json()
 
-    if (submitError) {
-      console.error('Full error:', submitError)
-      setError('Failed to submit. Please try again.')
+      if (!res.ok || !data.id) {
+        setError('Failed to submit. Please try again.')
+        setLoading(false)
+        return
+      }
+
+      // Text the approvers. A failed text should not block the save.
+      fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ editId: data.id }),
+      }).catch((err) => console.error('Notify failed', err))
+
+      onSave()
+    } catch (err) {
+      console.error('Error submitting changes:', err)
+      setError('Error submitting changes')
       setLoading(false)
-      return
     }
-
-    // Text the approvers. A failed text should not block the save.
-    fetch('/api/notify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ editId: inserted.id }),
-    }).catch((err) => console.error('Notify failed', err))
-
-    onSave()
-  } catch (err) {
-    console.error('Error submitting changes:', err)
-    setError('Error submitting changes')
-    setLoading(false)
   }
-}
 
   return (
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={onClose} />
       <div className={styles.content}>
         <h2>Store Closure Banner</h2>
-        
+
         <div className={styles.field}>
           <label>
             <input
@@ -65,7 +59,7 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
               onChange={(e) => setIsOpen(e.target.checked)}
               disabled={loading}
             />
-            {' '}Check Box & Submit For Closures. Leave Unchecked & Submit to Re-Open. (This will display a banner on the store page)
+            {' '}Store is currently closed
           </label>
         </div>
 
@@ -86,11 +80,7 @@ export default function ClosureModal({ locationSlug, onClose, onSave }) {
 
         <div className={styles.actions}>
           <button onClick={onClose} disabled={loading}>Cancel</button>
-          <button 
-            onClick={handleSave} 
-            disabled={loading}
-            className={styles.primary}
-          >
+          <button onClick={handleSave} disabled={loading} className={styles.primary}>
             {loading ? 'Submitting...' : 'Submit for Approval'}
           </button>
         </div>

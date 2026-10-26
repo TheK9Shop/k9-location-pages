@@ -36,35 +36,25 @@ export default function StaffModal({ locationSlug, onClose, onSave }) {
     ))
   }
 
-  const handleSave = async () => {
+    const handleSave = async () => {
     setLoading(true)
     setError('')
 
-    // Validate
     if (staff.some(s => !s.name || !s.title)) {
       setError('All staff must have a name and title')
       setLoading(false)
       return
     }
 
+    const token = localStorage.getItem('session_token')
     try {
-      const { supabase } = await import('@/lib/supabase')
+      const res = await fetch('/api/edits/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ slug: locationSlug, field_name: 'staff', new_value: staff }),
+      })
 
-      const { error: submitError } = await supabase
-        .from('location_edits')
-        .insert({
-          location_slug: locationSlug,
-          field_name: 'staff',
-          edit_type: 'update',
-          old_value: null,
-          new_value: JSON.stringify(staff),
-          status: 'pending_approval',
-          submitted_by: 'test-user',
-          submitted_at: new Date().toISOString(),
-        })
-
-      if (submitError) {
-        console.error('Full error:', submitError)
+      if (!res.ok) {
         setError('Failed to submit. Please try again.')
         setLoading(false)
         return
