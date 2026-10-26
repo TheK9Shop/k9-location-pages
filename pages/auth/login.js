@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import SiteNav from '@/components/SiteNav'
+import SiteFooter from '@/components/SiteFooter'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -14,61 +16,20 @@ export default function Login() {
     setLoading(true)
 
     try {
-      // Lazy load Supabase only when needed
-      const { supabase } = await import('@/lib/supabase')
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      })
+      const data = await res.json()
 
-      // Query Supabase for the account
-      const { data, error: queryError } = await supabase
-        .from('franchisee_accounts')
-        .select('id, location_slug, password_hash, active')
-        .eq('email', email)
-        .single()
-
-      console.log('Query result:', data, queryError)
-
-      if (queryError || !data) {
-        console.log('Account not found')
+      if (!res.ok || !data.token) {
         setError('Login Failed. Please Try Again')
         setLoading(false)
         return
       }
 
-      if (!data.active) {
-        console.log('Account inactive')
-        setError('Account is inactive')
-        setLoading(false)
-        return
-      }
-
-      // Compare passwords (basic - should be bcrypt in production)
-      if (data.password_hash !== password) {
-        console.log('Password mismatch')
-        setError('Login Failed. Please Try Again')
-        setLoading(false)
-        return
-      }
-
-      // Create session
-      const token = Math.random().toString(36).substring(2, 15)
-      const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
-
-      const { error: insertError } = await supabase
-        .from('session_tokens')
-        .insert({
-          account_id: data.id,
-          token,
-          expires_at: expiresAt,
-        })
-
-      console.log('Session insert result:', insertError)
-
-      if (insertError) {
-        setError('Failed to create session')
-        setLoading(false)
-        return
-      }
-
-      localStorage.setItem('session_token', token)
+      localStorage.setItem('session_token', data.token)
       router.push(`/franchisee/dashboard/${data.location_slug}`)
     } catch (err) {
       console.error('Login error:', err)
@@ -77,81 +38,68 @@ export default function Login() {
     }
   }
 
+  const inputStyle = {
+    width: '100%',
+    padding: '12px 14px',
+    border: '1px solid #DDD',
+    borderRadius: 4,
+    fontSize: 15,
+    marginBottom: 16,
+    boxSizing: 'border-box',
+    fontFamily: 'inherit',
+  }
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
-      <div style={{ background: 'white', padding: '40px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', width: '100%', maxWidth: '400px' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '30px', color: '#1A1A1A' }}>K9 Shop — Franchisee Login</h1>
+    <>
+      <SiteNav />
 
-        <form onSubmit={handleLogin}>
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: '#333' }}>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={loading}
-              style={{
-                width: '100%',
-                padding: '12px',
-                border: '1px solid #ddd',
-                borderRadius: '6px',
-                fontSize: '14px',
-                boxSizing: 'border-box',
-              }}
-              placeholder="your@email.com"
-            />
+      <div style={{ background: '#F9F9F7', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '80px 20px' }}>
+        <form
+          onSubmit={handleLogin}
+          style={{ background: '#FFF', border: '1px solid #E5E5E5', borderRadius: 8, padding: 32, width: '100%', maxWidth: 400 }}
+        >
+          <div style={{ fontSize: 12, fontWeight: 900, letterSpacing: '0.2em', color: '#C0392B', textTransform: 'uppercase', marginBottom: 12 }}>
+            Franchisee Login
           </div>
+          <h1 style={{ fontSize: 26, fontWeight: 900, color: '#1A1A1A', margin: '0 0 24px 0' }}>Sign In</h1>
 
-          <div style={{ marginBottom: '30px' }}>
-            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: '#333' }}>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              disabled={loading}
-              style={{
-                width: '100%',
-                padding: '12px',
-                border: '1px solid #ddd',
-                borderRadius: '6px',
-                fontSize: '14px',
-                boxSizing: 'border-box',
-              }}
-              placeholder="••••••••"
-            />
-          </div>
+          <label style={{ display: 'block', fontSize: 13, fontWeight: 700, marginBottom: 6, color: '#333' }}>Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            disabled={loading}
+            style={inputStyle}
+          />
 
-          {error && (
-            <div style={{ background: '#fee', padding: '12px', borderRadius: '6px', marginBottom: '20px', color: '#c00', fontSize: '14px' }}>
-              {error}
-            </div>
-          )}
+          <label style={{ display: 'block', fontSize: 13, fontWeight: 700, marginBottom: 6, color: '#333' }}>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            disabled={loading}
+            style={inputStyle}
+          />
+
+          {error && <p style={{ color: '#C0392B', fontSize: 14, margin: '0 0 16px 0' }}>{error}</p>}
 
           <button
             type="submit"
             disabled={loading}
             style={{
-              width: '100%',
-              padding: '12px',
-              background: loading ? '#ccc' : '#C0392B',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              fontWeight: '600',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              fontSize: '14px',
+              width: '100%', background: '#C0392B', color: '#FFF', border: 'none', borderRadius: 4,
+              padding: '14px', fontWeight: 900, fontSize: 13, letterSpacing: '0.1em',
+              textTransform: 'uppercase', cursor: loading ? 'wait' : 'pointer',
             }}
           >
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
-
-        <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '12px', color: '#999' }}>
-          Forgot your password? Contact support.
-        </p>
       </div>
-    </div>
+
+      <SiteFooter />
+    </>
   )
 }
