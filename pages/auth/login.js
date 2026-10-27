@@ -30,7 +30,7 @@ export default function Login() {
       }
 
       localStorage.setItem('session_token', data.token)
-      router.push(`/franchisee/dashboard/${data.location_slug}`)
+      router.push(data.role === 'approver' ? '/admin/approvals' : `/franchisee/dashboard/${data.location_slug}`)
     } catch (err) {
       console.error('Login error:', err)
       setError('Login Failed. Please Try Again')

@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
   const cleanEmail = encodeURIComponent(email.trim().toLowerCase());
   const r = await fetch(
-    `${URL_BASE}/rest/v1/franchisee_accounts?email=eq.${cleanEmail}&active=eq.true&select=id,location_slug,password_hash`,
+    `${URL_BASE}/rest/v1/franchisee_accounts?email=eq.${cleanEmail}&active=eq.true&select=id,location_slug,password_hash,role`,
     { headers: H }
   );
   const [acct] = await r.json();
@@ -35,5 +35,5 @@ export default async function handler(req, res) {
     body: JSON.stringify({ account_id: acct.id, token, expires_at }),
   });
 
-  return res.status(200).json({ token, location_slug: acct.location_slug });
+  return res.status(200).json({ token, location_slug: acct.location_slug, role: acct.role });
 }
