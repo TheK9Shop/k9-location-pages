@@ -72,9 +72,17 @@ export default function About({ location }) {
               {team && team.length > 0 ? (
                 team.map((member) => (
                   <div key={member.id} style={{ background: '#FFF', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)', transition: 'transform 150ms, box-shadow 150ms' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 16px rgba(0, 0, 0, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)'; }}>
-                    <div style={{ width: '100%', height: '180px', background: 'linear-gradient(135deg, #C0392B 0%, #e74c3c 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '72px' }}>
-                      👤
-                    </div>
+                                        {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                      />
+                    ) : (
+                      <div style={{ width: '100%', height: '180px', background: 'linear-gradient(135deg, #C0392B 0%, #e74c3c 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontSize: '44px', fontWeight: '900' }}>
+                        {member.name.split(' ').map((p) => p[0]).join('').slice(0, 2).toUpperCase()}
+                      </div>
+                    )}
                     <div style={{ padding: '20px' }}>
                       <h4 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: '700', color: '#1A1A1A' }}>
                         {member.name}
