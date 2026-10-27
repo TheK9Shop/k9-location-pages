@@ -20,7 +20,6 @@ import SiteFooter from '@/components/SiteFooter';
 const DEFAULT_ORDER = ['about', 'products', 'what-we-carry', 'shop-by-category', 'gallery', 'reviews'];
 
 // Bohemia and Massapequa: Shop by Category first.
-// The Expert section sits right after About (rendered inside the 'about' case).
 const ORDER_BY_STORE = {
   bohemia: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
   massapequa: ['shop-by-category', 'about', 'products', 'what-we-carry', 'gallery', 'reviews'],
@@ -93,6 +92,35 @@ export default function LocationPage({ location }) {
   );
 }
 
+// Latest approved staff list for a store, or null if none is approved
+async function getApprovedStaff(slug) {
+  const URL_BASE = process.env.SUPABASE_URL;
+  const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!URL_BASE || !KEY) return null;
+
+  const res = await fetch(
+    `${URL_BASE}/rest/v1/location_edits?location_slug=eq.${slug}&field_name=eq.staff&status=eq.approved&select=new_value&order=approved_at.desc&limit=1`,
+    { headers: { apikey: KEY, Authorization: `Bearer ${KEY}` } }
+  );
+  const [row] = await res.json();
+  if (!row) return null;
+
+  let list = row.new_value;
+  if (typeof list === 'string') list = JSON.parse(list);
+  if (typeof list === 'string') list = JSON.parse(list);
+  if (!Array.isArray(list)) return null;
+
+  return list
+    .filter((p) => p.name)
+    .map((p, i) => ({
+      id: `approved-${i}`,
+      name: p.name,
+      role: p.title || '',
+      bio: p.bio || '',
+      image: p.photo || '',
+    }));
+}
+
 export async function getStaticProps({ params }) {
   const location = getLocationBySlug(params.slug);
 
@@ -100,8 +128,11 @@ export async function getStaticProps({ params }) {
     return { notFound: true };
   }
 
+  const approved = await getApprovedStaff(params.slug);
+  const team = approved ?? location.team ?? [];
+
   return {
-    props: { location },
+    props: { location: { ...location, team } },
     revalidate: 60,
   };
 }
