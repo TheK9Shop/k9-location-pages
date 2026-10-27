@@ -12,57 +12,49 @@ export default function Approvals() {
     loadPendingEdits()
   }, [])
 
-  const loadPendingEdits = async () => {
-    const { supabase } = await import('@/lib/supabase')
-    
-    const { data, error } = await supabase
-      .from('location_edits')
-      .select('*')
-      .eq('status', 'pending_approval')
-      .order('submitted_at', { ascending: false })
+    const getToken = () => localStorage.getItem('session_token')
 
-    if (!error) {
-      setEdits(data)
+  const loadPendingEdits = async () => {
+    const res = await fetch('/api/admin/edits', {
+      headers: { Authorization: `Bearer ${getToken()}` },
+    })
+    if (res.status === 401) {
+      window.location.href = '/auth/login'
+      return
     }
+    const data = await res.json()
+    setEdits(data.edits || [])
     setLoading(false)
   }
 
   const handleApprove = async (editId) => {
-    const { supabase } = await import('@/lib/supabase')
-    
-    const { error } = await supabase
-      .from('location_edits')
-      .update({
-        status: 'approved',
-        approved_by: 'seann@thek9shop.com',
-        approved_at: new Date().toISOString(),
-      })
-      .eq('id', editId)
-
-    if (!error) {
+    const res = await fetch('/api/admin/edits', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${getToken()}` },
+      body: JSON.stringify({ id: editId, action: 'approve' }),
+    })
+    if (res.ok) {
       setSelectedEdit(null)
       loadPendingEdits()
       alert('Approved!')
+    } else {
+      alert('Could not approve. Please try again.')
     }
   }
 
   const handleReject = async (editId, reason) => {
-    const { supabase } = await import('@/lib/supabase')
-    
-    const { error } = await supabase
-      .from('location_edits')
-      .update({
-        status: 'rejected',
-        rejection_reason: reason,
-        approved_at: new Date().toISOString(),
-      })
-      .eq('id', editId)
-
-    if (!error) {
+    const res = await fetch('/api/admin/edits', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${getToken()}` },
+      body: JSON.stringify({ id: editId, action: 'reject', reason }),
+    })
+    if (res.ok) {
       setSelectedEdit(null)
       setApprovalComment('')
       loadPendingEdits()
       alert('Rejected!')
+    } else {
+      alert('Could not reject. Please try again.')
     }
   }
 
